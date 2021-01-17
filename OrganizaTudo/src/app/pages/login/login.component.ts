@@ -35,7 +35,9 @@ export class LoginComponent implements OnInit {
         senha: this.senha
       }
     ).toPromise().then((resultado: any) => {
-      if (resultado !== '404') {
+      if (this.apelido === '' || this.senha === '') {
+        this.mensagem = ('Preencha todos os campos!!!');
+      } else if (resultado !== '404') {
         this.mensagem = '';
         this.sessao.Login(resultado.$oid);
         this.router.navigate(['/home']);
