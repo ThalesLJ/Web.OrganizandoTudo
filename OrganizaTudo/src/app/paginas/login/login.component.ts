@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-import { SessaoService } from '.././../services/sessao.service';
+import { SessaoService } from '.././../servicos/sessao.service';
 
 @Component({
   selector: 'app-login',
