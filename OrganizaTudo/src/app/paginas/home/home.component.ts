@@ -10,9 +10,11 @@ export class HomeComponent implements OnInit {
 
   constructor(private api: ApiService) { }
 
+  notas: any;
+
   ngOnInit(): void {
-    this.api.BuscarNotas().then(x => {
-      console.log(x);
+    this.api.BuscarNotas().then((retorno: any) => {
+      this.notas = retorno;
     });
   }
 
