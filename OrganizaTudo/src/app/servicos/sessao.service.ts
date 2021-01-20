@@ -11,4 +11,9 @@ export class SessaoService {
     localStorage.setItem('USUARIO', id);
   }
 
+  public getLogin(): string {
+    const USUARIO = '' + localStorage.getItem('USUARIO');
+    return USUARIO;
+  }
+
 }

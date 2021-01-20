@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { SessaoService } from '.././../servicos/sessao.service';
+import { ApiService } from 'src/app/servicos/api.service';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +12,7 @@ import { SessaoService } from '.././../servicos/sessao.service';
 export class LoginComponent implements OnInit {
 
   constructor(
-    private router: Router, private httpClient: HttpClient,
+    private router: Router, private api: ApiService,
     private sessao: SessaoService
   ) { }
 
@@ -28,13 +29,7 @@ export class LoginComponent implements OnInit {
     event.preventDefault();
 
     // Login
-    this.httpClient.post(
-      'https://webhooks.mongodb-realm.com/api/client/v2.0/app/organiza-tudo-luhho/service/API/incoming_webhook/Login',
-      {
-        apelido: this.apelido,
-        senha: this.senha
-      }
-    ).toPromise().then((resultado: any) => {
+    this.api.Login(this.apelido, this.senha).then((resultado: any) => {
       if (this.apelido === '' || this.senha === '') {
         this.mensagem = ('Preencha todos os campos!!!');
       } else if (resultado !== '404') {
@@ -44,7 +39,7 @@ export class LoginComponent implements OnInit {
       } else {
         this.mensagem = ('Usuário "' + this.apelido + '" não encontrado');
       }
-    });
+    })
 
   }
 
