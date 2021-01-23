@@ -1,19 +1,40 @@
 import { Injectable } from '@angular/core';
+import { ApiService } from './api.service';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SessaoService {
 
-  constructor() { }
+  constructor(private api: ApiService, private router: Router) { }
 
-  Login(id: string): void {
-    localStorage.setItem('USUARIO', id);
+  Login(TOKEN: string): void {
+    localStorage.setItem('TOKEN', TOKEN);
   }
 
-  public getLogin(): string {
-    const USUARIO = '' + localStorage.getItem('USUARIO');
-    return USUARIO;
+  Sair(): void {
+    localStorage.removeItem('TOKEN');
+    this.router.navigate(['/login']);
+  }
+
+  public validarToken(pagina?: string): void {
+    this.api.validacaoToken().then(token => {
+      if (token === false) {
+        this.Sair();
+      } else {
+        if (pagina === 'login') {
+          this.router.navigate(['/home']);
+        }
+      }
+    }).catch(() => {
+      this.Sair();
+    });
+  }
+
+  public getToken(): string {
+    const TOKEN = '' + localStorage.getItem('TOKEN');
+    return TOKEN;
   }
 
 }

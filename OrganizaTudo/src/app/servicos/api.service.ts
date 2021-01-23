@@ -1,13 +1,12 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { SessaoService } from 'src/app/servicos/sessao.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
 
-  constructor(private http: HttpClient, private sessao: SessaoService) { }
+  constructor(private http: HttpClient) { }
 
   base = 'https://webhooks.mongodb-realm.com/api/client/v2.0/app/organiza-tudo-luhho/service/API/incoming_webhook';
 
@@ -26,10 +25,19 @@ export class ApiService {
       (
         this.base + '/buscarNotas',
         {
-          usuario: this.sessao.getLogin()
+          token: localStorage.getItem('TOKEN')
         }
       ).toPromise();
   }
 
+  public validacaoToken(): Promise<any> {
+    return this.http.post
+      (
+        this.base + '/validacaoToken',
+        {
+          token: localStorage.getItem('TOKEN')
+        }
+      ).toPromise();
+  }
 
 }

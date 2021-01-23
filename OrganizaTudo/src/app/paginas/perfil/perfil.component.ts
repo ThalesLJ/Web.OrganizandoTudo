@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from 'src/app/servicos/api.service';
+import { SessaoService } from 'src/app/servicos/sessao.service';
 
 @Component({
   selector: 'app-perfil',
@@ -7,9 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PerfilComponent implements OnInit {
 
-  constructor() { }
+  constructor(private api: ApiService, private sessao: SessaoService) { }
 
   ngOnInit(): void {
+    this.sessao.validarToken();
   }
 
 }

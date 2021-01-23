@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
 import { SessaoService } from '.././../servicos/sessao.service';
 import { ApiService } from 'src/app/servicos/api.service';
 
@@ -21,6 +20,7 @@ export class LoginComponent implements OnInit {
   mensagem = '';
 
   ngOnInit(): void {
+    this.sessao.validarToken('login');
   }
 
   Login(event: any): void {
@@ -34,12 +34,12 @@ export class LoginComponent implements OnInit {
         this.mensagem = ('Preencha todos os campos!!!');
       } else if (resultado !== '404') {
         this.mensagem = '';
-        this.sessao.Login(resultado.$oid);
+        this.sessao.Login(resultado);
         this.router.navigate(['/home']);
       } else {
         this.mensagem = ('Usuário "' + this.apelido + '" não encontrado');
       }
-    })
+    });
 
   }
 

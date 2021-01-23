@@ -3,6 +3,12 @@ span{
     cursor: pointer;
 }
 
+.btn-sair{
+    position: fixed;
+    height: 10px;
+    top: 20px;
+    right: 30px;
+}
 
 /* Toolbar Styles */
 :host {
