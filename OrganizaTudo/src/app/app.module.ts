@@ -7,12 +7,22 @@ import { HomeComponent } from './paginas/home/home.component';
 import { LoginComponent } from './paginas/login/login.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { CriarNotaComponent } from './paginas/criar-nota/criar-nota.component';
+import { NotasComponent } from './paginas/notas/notas.component';
+import { LembretesComponent } from './paginas/lembretes/lembretes.component';
+import { TarefasComponent } from './paginas/tarefas/tarefas.component';
+import { PerfilComponent } from './paginas/perfil/perfil.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    CriarNotaComponent,
+    NotasComponent,
+    LembretesComponent,
+    TarefasComponent,
+    PerfilComponent
   ],
   imports: [
     BrowserModule,

@@ -1,25 +1,11 @@
 <!-- Toolbar -->
 <div class="toolbar" role="banner">
   <img width="40" src="../favicon.ico" />
-  <span>Home</span>
-  <span style="margin-left: 90%; cursor: pointer;" [routerLink]="['/login']">Sair</span>
+  <span [routerLink]="['/home/notas']">Notas</span>
+  <span [routerLink]="['/home/lembretes']">Lembretes</span>
+  <span [routerLink]="['/home/tarefas']">Tarefas</span>
+  <span [routerLink]="['/home/perfil']">Perfil</span>
+  <span [routerLink]="['/login']">Sair</span>
 </div>
-
-<div class="fab">
-</div>
-
-<div class="content" role="main">
-
-  <div class="card-container">
-    <a class="card" *ngFor="let nota of notas">
-      <span>{{nota.titulo}}</span>
-      <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-        <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
-      </svg>
-    </a>
-  </div>
-
-</div>
-
 
 <router-outlet></router-outlet>
