@@ -1,0 +1,55 @@
+@media screen and (min-width: 1000px) {
+    textarea {
+        width: 98%;
+        max-width: 98%;
+        min-width: 98%;
+        height: 50vh;
+        max-height: 100vh;
+        min-height: 40vh;
+        padding: 10px;
+        line-height: 1.5;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        box-shadow: 1px 1px 1px #999;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    textarea {
+        width: 91%;
+        max-width: 91%;
+        min-width: 91%;
+        height: 35vh;
+        max-height: 100vh;
+        min-height: 25vh;
+        padding: 10px;
+        line-height: 1.5;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        box-shadow: 1px 1px 1px #999;
+    }
+}
+
+input {
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    margin-bottom: 10px;
+    width: 100%;
+    font-size: x-large;
+}
+
+input:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+textarea:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+button:focus {
+    outline: none;
+    box-shadow: none;
+}

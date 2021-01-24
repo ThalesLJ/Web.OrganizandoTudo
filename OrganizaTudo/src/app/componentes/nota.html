@@ -1,0 +1,10 @@
+<input value="{{data.nota.titulo}}" matInput [(ngModel)]="data.nota.titulo" />
+
+<div class="modal">
+    <textarea focus value="{{data.nota.nota}}" matInput [(ngModel)]="data.nota.nota"></textarea>
+</div>
+
+<mat-dialog-actions align="end">
+    <button mat-button (click)="salvar()" style="color: #1976d2;">Salvar</button>
+    <button mat-button (click)="excluir()" style="color: red;">Excluir</button>
+</mat-dialog-actions>

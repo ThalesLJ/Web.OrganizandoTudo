@@ -1,18 +1,31 @@
-.fab{
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    cursor: pointer;
+@media screen and (max-width: 1000px) {
+    .fab {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        cursor: pointer;
+    }
 }
 
+@media screen and (min-width: 1000px) {
+    .fab {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        cursor: pointer;
+    }
+}
 
 /* Cards Styles */
 .content {
     display: flex;
-    margin: 82px auto 32px;
+    margin: 62px auto 32px;
     padding: 0 16px;
     max-width: 960px;
     flex-direction: column;
@@ -92,6 +105,7 @@ a:hover {
 }
 
 /* Responsive Styles */
+
 @media screen and (max-width: 767px) {
     .card-container>*:not(.circle-link), .terminal {
         width: 100%;

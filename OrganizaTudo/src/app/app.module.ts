@@ -12,6 +12,11 @@ import { NotasComponent } from './paginas/notas/notas.component';
 import { LembretesComponent } from './paginas/lembretes/lembretes.component';
 import { TarefasComponent } from './paginas/tarefas/tarefas.component';
 import { PerfilComponent } from './paginas/perfil/perfil.component';
+import { AppNotaComponent } from './paginas/notas/notas.component';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
+
 
 @NgModule({
   declarations: [
@@ -22,13 +27,21 @@ import { PerfilComponent } from './paginas/perfil/perfil.component';
     NotasComponent,
     LembretesComponent,
     TarefasComponent,
-    PerfilComponent
+    PerfilComponent,
+    AppNotaComponent
+  ],
+  entryComponents: [
+    MatDialogModule,
+    MatButtonModule
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NoopAnimationsModule,
+    MatDialogModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
