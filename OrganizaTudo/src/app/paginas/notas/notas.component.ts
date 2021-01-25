@@ -48,8 +48,8 @@ export class NotasComponent implements OnInit {
 
 @Component({
   selector: 'app-nota',
-  templateUrl: '../../componentes/nota.html',
-  styleUrls: ['../../componentes/nota.css']
+  templateUrl: '../../componentes/modal-nota/nota.html',
+  styleUrls: ['../../componentes/modal-nota/nota.css']
 })
 export class AppNotaComponent {
 
