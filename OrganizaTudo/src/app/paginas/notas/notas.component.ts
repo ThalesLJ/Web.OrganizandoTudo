@@ -1,6 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/servicos/api.service';
 import { SessaoService } from 'src/app/servicos/sessao.service';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-notas',
@@ -19,10 +20,14 @@ export class NotasComponent implements OnInit {
 
     this.sessao.validarToken();
 
+    this.AtualizarListagemNotas();
+
+  }
+
+  AtualizarListagemNotas(): void {
     this.api.BuscarNotas().then((retorno: any) => {
       this.notas = retorno;
     });
-
   }
 
   openDialog(nota: any): void {
@@ -33,18 +38,13 @@ export class NotasComponent implements OnInit {
       data: { nota }
     });
 
-    // dialogRef.afterClosed().subscribe(result => {
-    //   console.log(`Dialog result: ${result}`);
-    // });
+    dialogRef.afterClosed().subscribe(result => {
+      this.AtualizarListagemNotas();
+    });
 
   }
 
 }
-
-
-
-
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-nota',
@@ -55,14 +55,30 @@ export class AppNotaComponent {
 
   constructor(
     public dialogRef: MatDialogRef<AppNotaComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any) { }
+    @Inject(MAT_DIALOG_DATA) public data: any, private api: ApiService) { }
 
   salvar(): void {
-    this.dialogRef.close();
+
+    const id = this.data.nota._id.$oid;
+    const nota = {
+      titulo: this.data.nota.titulo,
+      nota: this.data.nota.nota
+    };
+
+    this.api.AtualizarNota(id, nota).then((retorno) => {
+      this.dialogRef.close();
+    }).catch(() => { });
+
   }
 
   excluir(): void {
-    this.dialogRef.close();
+
+    const id = this.data.nota._id.$oid;
+
+    this.api.DeletarNota(id).then((retorno) => {
+      this.dialogRef.close();
+    }).catch(() => { });
+
   }
 
 }

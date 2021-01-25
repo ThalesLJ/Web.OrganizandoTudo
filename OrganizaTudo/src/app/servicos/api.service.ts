@@ -20,6 +20,16 @@ export class ApiService {
       ).toPromise();
   }
 
+  public validacaoToken(): Promise<any> {
+    return this.http.post
+      (
+        this.base + '/validacaoToken',
+        {
+          token: localStorage.getItem('TOKEN')
+        }
+      ).toPromise();
+  }
+
   BuscarNotas(): Promise<any> {
     return this.http.post
       (
@@ -30,12 +40,36 @@ export class ApiService {
       ).toPromise();
   }
 
-  public validacaoToken(): Promise<any> {
+  CriarNota(nota: any): Promise<any> {
     return this.http.post
       (
-        this.base + '/validacaoToken',
+        this.base + '/inserirNota',
         {
-          token: localStorage.getItem('TOKEN')
+          token: localStorage.getItem('TOKEN'),
+          nota
+        }
+      ).toPromise();
+  }
+
+  AtualizarNota(notaID: string, nota: any): Promise<any> {
+    return this.http.post
+      (
+        this.base + '/editarNota',
+        {
+          token: localStorage.getItem('TOKEN'),
+          notaNova: nota,
+          notaID
+        }
+      ).toPromise();
+  }
+
+  DeletarNota(notaID: string): Promise<any> {
+    return this.http.post
+      (
+        this.base + '/deletarNota',
+        {
+          token: localStorage.getItem('TOKEN'),
+          notaID
         }
       ).toPromise();
   }
