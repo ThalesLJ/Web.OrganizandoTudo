@@ -36,3 +36,17 @@ span{
 .toolbar img {
     margin: 0 16px;
 }
+
+img{
+    cursor: pointer;
+}
+
+img:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+span:focus {
+    outline: none;
+    box-shadow: none;
+}
