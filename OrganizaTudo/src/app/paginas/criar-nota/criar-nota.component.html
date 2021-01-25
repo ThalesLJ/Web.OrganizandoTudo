@@ -1,8 +1,8 @@
 <div class="form">
-    <input type="text" placeholder="Título da Nota" />
-    <textarea></textarea>
+    <input type="text" placeholder="Título da Nota" [(ngModel)]="titulo" />
+    <textarea [(ngModel)]="nota"></textarea>
 </div>
 
 <div class="fab">
-    <button>Salvar</button>
+    <button (click)="Salvar()">Salvar</button>
 </div>
