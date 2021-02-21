@@ -25,7 +25,7 @@
 /* Cards Styles */
 .content {
     display: flex;
-    margin: 62px auto 32px;
+    margin: 20px auto 32px;
     padding: 0 16px;
     max-width: 960px;
     flex-direction: column;

@@ -1,5 +1,5 @@
 <!-- Toolbar -->
-<div class="toolbar" role="banner">
+<div class="toolbar">
   <img width="40" src="../favicon.ico" [routerLink]="['/home']"/>
   <span [routerLink]="['/home/notas']">Notas</span>
   <span [routerLink]="['/home/lembretes']">Lembretes</span>
@@ -7,5 +7,4 @@
   <span [routerLink]="['/home/perfil']">Perfil</span>
   <span class="btn-sair" (click)="Sair()">Sair</span>
 </div>
-
 <router-outlet></router-outlet>
