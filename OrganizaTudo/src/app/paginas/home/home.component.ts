@@ -12,6 +12,7 @@ export class HomeComponent implements OnInit {
   constructor(private api: ApiService, private sessao: SessaoService) { }
 
   notas: any;
+  usuario = '{usuario} - Sair';
 
   ngOnInit(): void {
     this.sessao.validarToken();

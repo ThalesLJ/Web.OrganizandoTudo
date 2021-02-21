@@ -7,7 +7,6 @@ import { LembretesComponent } from './paginas/lembretes/lembretes.component';
 import { LoginComponent } from './paginas/login/login.component';
 import { NotasComponent } from './paginas/notas/notas.component';
 import { PerfilComponent } from './paginas/perfil/perfil.component';
-import { TarefasComponent } from './paginas/tarefas/tarefas.component';
 
 const routes: Routes = [
 
@@ -22,7 +21,6 @@ const routes: Routes = [
           { path: '', redirectTo: 'notas', pathMatch: 'full' },
           { path: 'notas', component: NotasComponent },
           { path: 'lembretes', component: LembretesComponent },
-          { path: 'tarefas', component: TarefasComponent },
           { path: 'perfil', component: PerfilComponent },
           { path: 'criar-nota', component: CriarNotaComponent },
         ]

@@ -10,7 +10,6 @@ import { FormsModule } from '@angular/forms';
 import { CriarNotaComponent } from './paginas/criar-nota/criar-nota.component';
 import { NotasComponent } from './paginas/notas/notas.component';
 import { LembretesComponent } from './paginas/lembretes/lembretes.component';
-import { TarefasComponent } from './paginas/tarefas/tarefas.component';
 import { PerfilComponent } from './paginas/perfil/perfil.component';
 import { AppNotaComponent } from './paginas/notas/notas.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
@@ -26,7 +25,6 @@ import { MatButtonModule } from '@angular/material/button';
     CriarNotaComponent,
     NotasComponent,
     LembretesComponent,
-    TarefasComponent,
     PerfilComponent,
     AppNotaComponent
   ],
