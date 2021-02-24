@@ -26,7 +26,7 @@ export class NotasComponent implements OnInit {
 
   AtualizarListagemNotas(): void {
     this.api.BuscarNotas().then((retorno: any) => {
-      this.notas = retorno;
+      this.notas = retorno.reverse();
     });
   }
 
@@ -44,6 +44,10 @@ export class NotasComponent implements OnInit {
 
   }
 
+  Visualizar(): void {
+
+  }
+
 }
 
 @Component({
@@ -51,11 +55,20 @@ export class NotasComponent implements OnInit {
   templateUrl: '../../componentes/modal-nota/nota.html',
   styleUrls: ['../../componentes/modal-nota/nota.css']
 })
-export class AppNotaComponent {
+export class AppNotaComponent implements OnInit {
 
   constructor(
     public dialogRef: MatDialogRef<AppNotaComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any, private api: ApiService) { }
+
+  TituloAnterior = '';
+  NotaAnterior = '';
+  naoSalvo = false;
+
+  ngOnInit(): void {
+    this.NotaAnterior = this.data.nota.nota;
+    this.TituloAnterior = this.data.nota.titulo;
+  }
 
   salvar(): void {
 
@@ -66,7 +79,9 @@ export class AppNotaComponent {
     };
 
     this.api.AtualizarNota(id, nota).then((retorno) => {
-      this.dialogRef.close();
+      this.TituloAnterior = this.data.nota.titulo;
+      this.NotaAnterior = this.data.nota.nota;
+      this.naoSalvo = false;
     }).catch(() => { });
 
   }
@@ -79,6 +94,22 @@ export class AppNotaComponent {
       this.dialogRef.close();
     }).catch(() => { });
 
+  }
+
+  verificarNota(): void {
+    if (this.data.nota.nota !== this.NotaAnterior) {
+      this.naoSalvo = true;
+    } else {
+      this.naoSalvo = false;
+    }
+  }
+
+  verificarTitulo(): void {
+    if (this.data.nota.titulo !== this.TituloAnterior) {
+      this.naoSalvo = true;
+    } else {
+      this.naoSalvo = false;
+    }
   }
 
 }
