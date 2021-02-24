@@ -34,6 +34,9 @@
     width: 100%;
     padding: 7px;
     text-align: center;
+    border-top: none;
+    border-left: none;
+    border-right: none;
 }
 
 .div-searchNotas {
@@ -75,6 +78,16 @@
 }
 
 textarea:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+input:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+img:focus {
     outline: none;
     box-shadow: none;
 }
