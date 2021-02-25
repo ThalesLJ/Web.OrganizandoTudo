@@ -2,6 +2,7 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/servicos/api.service';
 import { SessaoService } from 'src/app/servicos/sessao.service';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-notas',
@@ -12,7 +13,7 @@ export class NotasComponent implements OnInit {
 
   constructor(
     private api: ApiService, private sessao: SessaoService,
-    public dialog: MatDialog) { }
+    public dialog: MatDialog, private router: Router) { }
 
   notas: any;
   txtPesquisa = '';
@@ -45,8 +46,8 @@ export class NotasComponent implements OnInit {
 
   }
 
-  Visualizar(): void {
-
+  Visualizar(nota: any): void {
+    this.router.navigate(['/nota/' + nota._id.$oid]);
   }
 
   PesquisarNota(): void {
@@ -55,6 +56,12 @@ export class NotasComponent implements OnInit {
         this.notas = retorno.reverse();
       });
     } else { this.AtualizarListagemNotas(); }
+  }
+
+  AtualizarPrivacidade(nota: any, publica: any): void {
+    const id = nota._id.$oid;
+    this.api.AtualizarPrivacidadeNota(id, publica.currentTarget.checked).then((retorno) => {
+    }).catch(() => { });
   }
 
 }

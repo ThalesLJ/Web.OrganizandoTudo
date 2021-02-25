@@ -10,17 +10,17 @@
     <div id="divContent">
       <span class="titulo" (click)="openDialog(nota)">{{nota.titulo}}</span>
       <br>
-      <textarea readonly class="nota" maxlength="5">{{nota.nota}}</textarea>
+      <textarea readonly class="nota">{{nota.nota}}</textarea>
     </div>
     <!--CHECKBOX-->
     <div class="divCheck">
-      <input type="checkbox" id="{{nota._id.$oid}}" style="margin-top: 10%;" />
+      <input type="checkbox" checked="{{nota.publica}}" id="{{nota._id.$oid}}" style="margin-top: 10%;" (change)="AtualizarPrivacidade(nota, $event)"/>
       <label for="{{nota._id.$oid}}" class="checkText">Nota Pública</label>
     </div>
     <!--BUTTONS-->
     <div class="divButtons">
       <button mat-button (click)="openDialog(nota)" style="color: #1976d2;">Editar</button>
-      <button mat-button (click)="Visualizar()" style="color: #1976d2;">Visualizar</button>
+      <button mat-button (click)="Visualizar(nota)" style="color: #1976d2;">Visualizar</button>
     </div>
   </div>
 

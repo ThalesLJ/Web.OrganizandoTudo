@@ -1,0 +1,10 @@
+<img class="fab" src="../favicon.ico" [routerLink]="['/home/notas']" />
+
+<div class="contentOk" *ngIf="publica">
+    <input value="{{titulo}}" disabled/><br>
+    <textarea value="{{nota}}" disabled></textarea>
+</div>
+
+<div class="contentErro" *ngIf="!publica">
+    <span>{{mensagem}}</span>
+</div>

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
+import { NotaComponent } from './paginas/nota/nota.component';
 import { CriarNotaComponent } from './paginas/criar-nota/criar-nota.component';
 import { HomeComponent } from './paginas/home/home.component';
 import { LembretesComponent } from './paginas/lembretes/lembretes.component';
@@ -15,6 +16,7 @@ const routes: Routes = [
     path: '', component: AppComponent,
     children: [
       { path: 'login', component: LoginComponent },
+      { path: 'nota/:id', component: NotaComponent },
       {
         path: 'home', component: HomeComponent,
         children: [

@@ -15,7 +15,8 @@ import { AppNotaComponent } from './paginas/notas/notas.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
-
+import { NotaComponent } from './paginas/nota/nota.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { MatButtonModule } from '@angular/material/button';
     NotasComponent,
     LembretesComponent,
     PerfilComponent,
-    AppNotaComponent
+    AppNotaComponent,
+    NotaComponent
   ],
   entryComponents: [
     MatDialogModule,
@@ -39,7 +41,8 @@ import { MatButtonModule } from '@angular/material/button';
     FormsModule,
     NoopAnimationsModule,
     MatDialogModule,
-    MatButtonModule
+    MatButtonModule,
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -50,6 +50,16 @@ export class ApiService {
       ).toPromise();
   }
 
+  PesquisarNota(id: string): Promise<any> {
+    return this.http.post
+      (
+        this.base + '/pesquisarNota',
+        {
+          token: localStorage.getItem('TOKEN'), id
+        }
+      ).toPromise();
+  }
+
   CriarNota(nota: any): Promise<any> {
     return this.http.post
       (
@@ -79,6 +89,18 @@ export class ApiService {
         this.base + '/deletarNota',
         {
           token: localStorage.getItem('TOKEN'),
+          notaID
+        }
+      ).toPromise();
+  }
+
+  AtualizarPrivacidadeNota(notaID: string, privacidade: boolean): Promise<any> {
+    return this.http.post
+      (
+        this.base + '/atualizarPrivacidadeNota',
+        {
+          token: localStorage.getItem('TOKEN'),
+          privacidade,
           notaID
         }
       ).toPromise();

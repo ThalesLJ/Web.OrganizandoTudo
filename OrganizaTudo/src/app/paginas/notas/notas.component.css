@@ -32,7 +32,7 @@
 
 .searchNotas {
     width: 100%;
-    padding: 7px;
+    padding: 20px 20px 10px 10px;
     text-align: center;
     border-top: none;
     border-left: none;
@@ -104,6 +104,7 @@ img:focus {
 .checkText {
     color: #1976d2;
     font-weight: 500;
+    cursor: pointer;
 }
 
 a, a:visited, a:hover {

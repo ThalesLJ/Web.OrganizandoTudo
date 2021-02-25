@@ -1,0 +1,88 @@
+.contentOk{
+    position: fixed;
+    text-align: center;
+    margin-top: 2%;
+    width: 100%;
+}
+
+.contentErro{
+    position: fixed;
+    text-align: center;
+    margin-top: 2%;
+    font-weight: 1000;
+    color: rgb(158, 0, 0);
+    width: 100%;
+}
+
+textarea:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+input:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+img:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+@media screen and (max-width: 1000px) {
+    .fab {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        cursor: pointer;
+    }
+    input{
+        width: 79%;
+        padding: 10px;
+        border-top: 0;
+        border-right: 0;
+        border-left: 0;
+    }
+    textarea{
+        max-width: 79%;
+        min-width: 79%;
+        max-height: 70vh;
+        min-height: 50vh;
+        padding: 10px;
+        border-top: 0;
+        border-right: 0;
+        border-left: 0;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .fab {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        cursor: pointer;
+    }
+    input{
+        width: 79%;
+        padding: 10px;
+        border-top: 0;
+        border-right: 0;
+        border-left: 0;
+    }    
+    textarea{
+        max-width: 79%;
+        min-width: 79%;
+        max-height: 85vh;
+        min-height: 60vh;
+        padding: 10px;
+        border-top: 0;
+        border-right: 0;
+        border-left: 0;
+    }
+}
