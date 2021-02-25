@@ -15,6 +15,7 @@ export class NotasComponent implements OnInit {
     public dialog: MatDialog) { }
 
   notas: any;
+  txtPesquisa = '';
 
   ngOnInit(): void {
 
@@ -46,6 +47,14 @@ export class NotasComponent implements OnInit {
 
   Visualizar(): void {
 
+  }
+
+  PesquisarNota(): void {
+    if (this.txtPesquisa !== '') {
+      this.api.PesquisarNotas(this.txtPesquisa).then((retorno: any) => {
+        this.notas = retorno.reverse();
+      });
+    } else { this.AtualizarListagemNotas(); }
   }
 
 }

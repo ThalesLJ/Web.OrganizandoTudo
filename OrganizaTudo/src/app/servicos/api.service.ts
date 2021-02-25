@@ -40,6 +40,16 @@ export class ApiService {
       ).toPromise();
   }
 
+  PesquisarNotas(titulo: string): Promise<any> {
+    return this.http.post
+      (
+        this.base + '/pesquisarNotas',
+        {
+          token: localStorage.getItem('TOKEN'), titulo
+        }
+      ).toPromise();
+  }
+
   CriarNota(nota: any): Promise<any> {
     return this.http.post
       (
