@@ -29,6 +29,7 @@ export class NotasComponent implements OnInit {
   AtualizarListagemNotas(): void {
     this.api.BuscarNotas().then((retorno: any) => {
       this.notas = retorno.reverse();
+      this.txtPesquisa = '';
     });
   }
 
