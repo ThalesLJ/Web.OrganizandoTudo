@@ -9,15 +9,14 @@ export class SessaoService {
 
   constructor(private api: ApiService, private router: Router) { }
 
-  apelido = '';
-
   Login(TOKEN: string, APELIDO: string): void {
     localStorage.setItem('TOKEN', TOKEN);
-    this.apelido = APELIDO;
+    localStorage.setItem('APELIDO', APELIDO);
   }
 
   Sair(): void {
     localStorage.removeItem('TOKEN');
+    localStorage.removeItem('APELIDO');
     this.router.navigate(['/login']);
   }
 
@@ -38,6 +37,11 @@ export class SessaoService {
   public getToken(): string {
     const TOKEN = '' + localStorage.getItem('TOKEN');
     return TOKEN;
+  }
+
+  public getApelido(): string {
+    const APELIDO = '' + localStorage.getItem('APELIDO');
+    return APELIDO;
   }
 
 }

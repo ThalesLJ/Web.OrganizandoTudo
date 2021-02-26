@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from 'src/app/servicos/api.service';
 import { SessaoService } from 'src/app/servicos/sessao.service';
 
 @Component({
@@ -12,11 +11,11 @@ export class HomeComponent implements OnInit {
   constructor(private sessao: SessaoService) { }
 
   notas: any;
-  usuario = '';
+  usuario = 'Sair da Conta';
 
   ngOnInit(): void {
     this.sessao.validarToken();
-    this.usuario = this.sessao.apelido + ' - Sair';
+    //this.usuario = this.sessao.getApelido() != null ? '' : this.sessao.getApelido() + ' - Sair';
   }
 
   Sair(): void {

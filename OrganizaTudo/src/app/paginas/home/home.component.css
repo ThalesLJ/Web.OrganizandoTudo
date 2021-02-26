@@ -4,10 +4,8 @@ span{
 }
 
 .btn-sair{
-    position: fixed;
-    height: 10px;
-    top: 20px;
-    right: 30px;
+    position: absolute;
+    right: 15px;
 }
 
 /* Toolbar Styles */
