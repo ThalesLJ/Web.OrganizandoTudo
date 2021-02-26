@@ -9,8 +9,11 @@ export class SessaoService {
 
   constructor(private api: ApiService, private router: Router) { }
 
-  Login(TOKEN: string): void {
+  apelido = '';
+
+  Login(TOKEN: string, APELIDO: string): void {
     localStorage.setItem('TOKEN', TOKEN);
+    this.apelido = APELIDO;
   }
 
   Sair(): void {

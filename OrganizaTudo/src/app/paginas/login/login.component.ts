@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
         this.mensagem = ('Preencha todos os campos!!!');
       } else if (resultado !== '404') {
         this.mensagem = '';
-        this.sessao.Login(resultado);
+        this.sessao.Login(resultado.Token, resultado.Apelido);
         this.router.navigate(['/home']);
       } else {
         this.mensagem = ('Usuário "' + this.apelido + '" não encontrado');

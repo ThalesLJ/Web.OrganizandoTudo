@@ -9,16 +9,17 @@ import { SessaoService } from 'src/app/servicos/sessao.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private api: ApiService, private sessao: SessaoService) { }
+  constructor(private sessao: SessaoService) { }
 
   notas: any;
-  usuario = '{usuario} - Sair';
+  usuario = '';
 
   ngOnInit(): void {
     this.sessao.validarToken();
+    this.usuario = this.sessao.apelido + ' - Sair';
   }
 
-  Sair(): void{
+  Sair(): void {
     this.sessao.Sair();
   }
 
