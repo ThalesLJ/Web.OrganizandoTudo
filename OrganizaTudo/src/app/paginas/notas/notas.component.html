@@ -15,7 +15,7 @@
     <!--CHECKBOX-->
     <div class="divCheck">
       <input type="checkbox" checked="{{nota.publica}}" id="{{nota._id.$oid}}" style="margin-top: 10%;" (change)="AtualizarPrivacidade(nota, $event)"/>
-      <label for="{{nota._id.$oid}}" class="checkText">Nota Pública</label>
+      <a [routerLink]="['/nota',nota._id.$oid]" class="checkText">Nota Pública</a>
     </div>
     <!--BUTTONS-->
     <div class="divButtons">
