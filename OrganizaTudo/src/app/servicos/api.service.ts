@@ -117,4 +117,14 @@ export class ApiService {
       ).toPromise();
   }
 
+  ListarPerfil(): Promise<any> {
+    return this.http.post
+      (
+        this.base + '/listarPerfil',
+        {
+          token: localStorage.getItem('TOKEN')
+        }
+      ).toPromise();
+  }
+
 }

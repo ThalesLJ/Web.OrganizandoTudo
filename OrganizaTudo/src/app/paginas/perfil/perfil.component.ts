@@ -18,6 +18,14 @@ export class PerfilComponent implements OnInit {
 
   ngOnInit(): void {
     this.sessao.validarToken();
+    this.ListarPerfil();
+  }
+
+  ListarPerfil(): void {
+    this.api.ListarPerfil().then(retorno => {
+      this.email = retorno.email;
+      this.apelido = retorno.apelido;
+    });
   }
 
   SalvarAlteracoes(): void {
@@ -29,7 +37,7 @@ export class PerfilComponent implements OnInit {
     } else {
       this.mensagem = '';
       this.api.AtualizarPerfil(this.email, this.apelido, this.senha).then((resultado: any) => {
-        if(resultado === '200') {
+        if (resultado === '200') {
           this.sessao.Sair();
         } else if (resultado === '201') {
           this.mensagem = 'O E-mail informado já está em uso, tente cadastrar outro valor.';
