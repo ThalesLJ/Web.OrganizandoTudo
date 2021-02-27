@@ -62,6 +62,9 @@ export class NotasComponent implements OnInit {
   AtualizarPrivacidade(nota: any, publica: any): void {
     const id = nota._id.$oid;
     this.api.AtualizarPrivacidadeNota(id, publica.currentTarget.checked).then((retorno) => {
+      if (retorno === '200') {
+        this.AtualizarListagemNotas()
+      }
     }).catch(() => { });
   }
 
