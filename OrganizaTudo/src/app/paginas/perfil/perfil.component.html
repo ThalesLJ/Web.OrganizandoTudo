@@ -3,13 +3,13 @@
 </div>
 <div class="form">
 
-    <input placeholder="E-mail" type="email" /><br>
-    <input placeholder="Apelido" type="text" /><br><br>
+    <input placeholder="E-mail" type="email" [(ngModel)]="email" name="email" /><br>
+    <input placeholder="Apelido" type="text" [(ngModel)]="apelido" name="apelido" /><br><br>
 
-    <input placeholder="Senha" type="password" title="Informe sua senha atual para salvar suas alterações!" /><br>
-    <input class="button" type="button" value="Salvar Alterações"
+    <input placeholder="Senha Atual" type="password" title="Informe sua senha atual para salvar suas alterações!"
+        [(ngModel)]="senha" name="senha" /><br>
+    <input class="button" type="button" value="Salvar Alterações" (click)="SalvarAlteracoes()"
         title="Informe sua senha atual para salvar suas alterações!" />
-
 
     <p class="mensagem">{{mensagem}}</p>
 

@@ -106,4 +106,15 @@ export class ApiService {
       ).toPromise();
   }
 
+  AtualizarPerfil(email: string, apelido: string, senha: string): Promise<any> {
+    return this.http.post
+      (
+        this.base + '/atualizarPerfil',
+        {
+          token: localStorage.getItem('TOKEN'),
+          dados: {email, apelido, senha}
+        }
+      ).toPromise();
+  }
+
 }
