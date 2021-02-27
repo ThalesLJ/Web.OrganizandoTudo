@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, Inject, OnInit, HostListener } from '@angular/core';
 import { ApiService } from 'src/app/servicos/api.service';
 import { SessaoService } from 'src/app/servicos/sessao.service';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
@@ -40,6 +40,10 @@ export class NotasComponent implements OnInit {
       height: '70vh',
       data: { nota }
     });
+
+    dialogRef.disableClose = true;
+
+    // dialogRef.beforeClosed
 
     dialogRef.afterClosed().subscribe(result => {
       this.AtualizarListagemNotas();
@@ -87,6 +91,17 @@ export class AppNotaComponent implements OnInit {
     this.TituloAnterior = this.data.nota.titulo;
   }
 
+  @HostListener('keydown', ['$event']) onKeyDown(e: any): void {
+    if (e.ctrlKey && e.keyCode === 13) {
+      this.salvar();
+    } else if (e.shiftKey && e.ctrlKey && e.keyCode === 83) {
+      this.salvar();
+    }
+    if (e.keyCode === 27) {
+      this.fechar();
+    }
+  }
+
   salvar(): void {
 
     const id = this.data.nota._id.$oid;
@@ -111,6 +126,18 @@ export class AppNotaComponent implements OnInit {
       this.dialogRef.close();
     }).catch(() => { });
 
+  }
+
+  fechar(): void {
+    if (this.naoSalvo) {
+      const cn = confirm
+        ('Tem certeza que deseja voltar à tela anterior? \nSe fechar fechar a nota, perderá todas as modificações realizadas.');
+      if (cn) {
+        this.dialogRef.close();
+      }
+    } else {
+      this.dialogRef.close();
+    }
   }
 
   verificarNota(): void {

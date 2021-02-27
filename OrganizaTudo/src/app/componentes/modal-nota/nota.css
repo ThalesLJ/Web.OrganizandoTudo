@@ -53,3 +53,30 @@ button:focus {
     outline: none;
     box-shadow: none;
 }
+
+.header {
+    display: flex;
+}
+
+#mdiv {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+
+.mdiv {
+    height: 25px;
+    width: 2px;
+    margin-left: 12px;
+    background-color: #1976d2;
+    transform: rotate(45deg);
+    Z-index: 1;
+}
+
+.md {
+    height: 25px;
+    width: 2px;
+    background-color: #1976d2;
+    transform: rotate(90deg);
+    Z-index: 2;
+}
