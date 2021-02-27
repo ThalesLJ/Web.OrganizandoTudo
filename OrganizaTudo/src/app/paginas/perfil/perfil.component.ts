@@ -9,6 +9,8 @@ import { SessaoService } from 'src/app/servicos/sessao.service';
 })
 export class PerfilComponent implements OnInit {
 
+  mensagem = '';
+
   constructor(private api: ApiService, private sessao: SessaoService) { }
 
   ngOnInit(): void {
