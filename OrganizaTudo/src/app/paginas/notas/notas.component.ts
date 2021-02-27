@@ -41,10 +41,6 @@ export class NotasComponent implements OnInit {
       data: { nota }
     });
 
-    dialogRef.disableClose = true;
-
-    // dialogRef.beforeClosed
-
     dialogRef.afterClosed().subscribe(result => {
       this.AtualizarListagemNotas();
     });
@@ -80,7 +76,9 @@ export class AppNotaComponent implements OnInit {
 
   constructor(
     public dialogRef: MatDialogRef<AppNotaComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any, private api: ApiService) { }
+    @Inject(MAT_DIALOG_DATA) public data: any, private api: ApiService) {
+
+  }
 
   TituloAnterior = '';
   NotaAnterior = '';
@@ -89,6 +87,7 @@ export class AppNotaComponent implements OnInit {
   ngOnInit(): void {
     this.NotaAnterior = this.data.nota.nota;
     this.TituloAnterior = this.data.nota.titulo;
+    this.dialogRef.backdropClick().subscribe(async () => await this.confirmarFechamento());
   }
 
   @HostListener('keydown', ['$event']) onKeyDown(e: any): void {
@@ -98,7 +97,7 @@ export class AppNotaComponent implements OnInit {
       this.salvar();
     }
     if (e.keyCode === 27) {
-      this.fechar();
+      this.confirmarFechamento();
     }
   }
 
@@ -137,6 +136,16 @@ export class AppNotaComponent implements OnInit {
       }
     } else {
       this.dialogRef.close();
+    }
+  }
+
+  confirmarFechamento(): void {
+    if (this.naoSalvo) {
+      const cn = confirm
+        ('Sua nota será fechada, clique em "OK" se quiser salvar suas modificações:');
+      if (cn) {
+        this.salvar();
+      }
     }
   }
 
