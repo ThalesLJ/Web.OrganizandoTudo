@@ -17,6 +17,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { NotaComponent } from './paginas/nota/nota.component';
 import { CommonModule } from '@angular/common';
+import { RecuperarSenhaComponent } from './paginas/recuperar-senha/recuperar-senha.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { CommonModule } from '@angular/common';
     LembretesComponent,
     PerfilComponent,
     AppNotaComponent,
-    NotaComponent
+    NotaComponent,
+    RecuperarSenhaComponent
   ],
   entryComponents: [
     MatDialogModule,
