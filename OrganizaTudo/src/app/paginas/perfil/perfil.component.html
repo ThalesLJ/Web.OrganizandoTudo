@@ -1,17 +1,19 @@
-<div class="formTitulo">
-    <span class="titulo">Alteração dos Dados Pessoais:</span>
-</div>
-<div class="form">
+<div *ngIf="ok">
+    <div class="formTitulo">
+        <span class="titulo">Alteração dos Dados Pessoais:</span>
+    </div>
+    <div class="form">
 
-    <input placeholder="E-mail" type="email" [(ngModel)]="email" name="email" /><br>
-    <input placeholder="Apelido" type="text" [(ngModel)]="apelido" name="apelido" /><br><br>
+        <input placeholder="E-mail" type="email" [(ngModel)]="email" name="email" /><br>
+        <input placeholder="Apelido" type="text" [(ngModel)]="apelido" name="apelido" /><br><br>
 
-    <input placeholder="Senha Atual" type="password" title="Informe sua senha atual para salvar suas alterações!"
-        [(ngModel)]="senha" name="senha" /><br>
-    <input class="button" type="button" value="Salvar Alterações" (click)="SalvarAlteracoes()"
-        title="Informe sua senha atual para salvar suas alterações!" />
+        <input placeholder="Senha Atual" type="password" title="Informe sua senha atual para salvar suas alterações!"
+            [(ngModel)]="senha" name="senha" /><br>
+        <input class="button" type="button" value="Salvar Alterações" (click)="SalvarAlteracoes()"
+            title="Informe sua senha atual para salvar suas alterações!" />
 
-    <p class="link" [routerLink]="['/recuperar-senha']">Recuperar Senha</p>
-    <p class="mensagem">{{mensagem}}</p>
+        <p class="link" [routerLink]="['/recuperar-senha']">Recuperar Senha</p>
+        <p class="mensagem">{{mensagem}}</p>
 
+    </div>
 </div>

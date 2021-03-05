@@ -13,6 +13,7 @@ export class PerfilComponent implements OnInit {
   apelido = '';
   senha = '';
   mensagem = '';
+  ok = false;
 
   constructor(private api: ApiService, private sessao: SessaoService) { }
 
@@ -25,6 +26,7 @@ export class PerfilComponent implements OnInit {
     this.api.ListarPerfil().then(retorno => {
       this.email = retorno.email;
       this.apelido = retorno.apelido;
+      this.ok = true;
     });
   }
 
