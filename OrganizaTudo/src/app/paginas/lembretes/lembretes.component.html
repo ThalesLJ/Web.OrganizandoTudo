@@ -1,4 +1,4 @@
-<img class="fab" src="../../../assets/imagens/add-icon.png" [routerLink]="['/home/lembretes']" />
+<img class="fab" src="../../../assets/imagens/add-icon.png" [routerLink]="['/home/criar-lembrete']" />
 
 
 <div class="div-searchLembretes">
@@ -8,7 +8,7 @@
 
 <div class="content">
     <div class="card" *ngFor="let lembrete of lembretes">
-        <span class="titulo">{{lembrete.titulo}}</span><br>
+        <span class="titulo" [routerLink]="['/home/editar-lembrete',lembrete._id.$oid]">{{lembrete.titulo}}</span><br>
         <div class="btn-card">
             <button mat-button (click)="Excluir(lembrete)" style="color: red; border: 1px solid red">Excluir</button>
         </div>
