@@ -18,6 +18,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { NotaComponent } from './paginas/nota/nota.component';
 import { CommonModule } from '@angular/common';
 import { RecuperarSenhaComponent } from './paginas/recuperar-senha/recuperar-senha.component';
+import { CriarLembreteComponent } from './paginas/criar-lembrete/criar-lembrete.component';
+import { EditarLembreteComponent } from './paginas/editar-lembrete/editar-lembrete.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { RecuperarSenhaComponent } from './paginas/recuperar-senha/recuperar-sen
     PerfilComponent,
     AppNotaComponent,
     NotaComponent,
-    RecuperarSenhaComponent
+    RecuperarSenhaComponent,
+    CriarLembreteComponent,
+    EditarLembreteComponent
   ],
   entryComponents: [
     MatDialogModule,
