@@ -112,7 +112,7 @@ export class ApiService {
         this.base + '/atualizarPerfil',
         {
           token: localStorage.getItem('TOKEN'),
-          dados: {email, apelido, senha}
+          dados: { email, apelido, senha }
         }
       ).toPromise();
   }
@@ -123,6 +123,37 @@ export class ApiService {
         this.base + '/listarPerfil',
         {
           token: localStorage.getItem('TOKEN')
+        }
+      ).toPromise();
+  }
+
+  BuscarLembretes(): Promise<any> {
+    return this.http.post
+      (
+        this.base + '/buscarLembretes',
+        {
+          token: localStorage.getItem('TOKEN')
+        }
+      ).toPromise();
+  }
+
+  PesquisarLembretes(titulo: string): Promise<any> {
+    return this.http.post
+      (
+        this.base + '/pesquisarLembretes',
+        {
+          token: localStorage.getItem('TOKEN'), titulo
+        }
+      ).toPromise();
+  }
+
+  DeletarLembrete(lembreteID: string): Promise<any> {
+    return this.http.post
+      (
+        this.base + '/deletarLembrete',
+        {
+          token: localStorage.getItem('TOKEN'),
+          lembreteID
         }
       ).toPromise();
   }

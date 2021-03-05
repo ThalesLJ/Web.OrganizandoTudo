@@ -11,16 +11,16 @@
     .content {
         display: flex;
         flex-wrap: wrap;
-        margin-left: 5%;
+        margin-left: 8%;
         padding-bottom: 2%;
-        max-width: 80%;
+        max-width: 76%;
     }
     .div-searchNotas {
         align-items: center;
         width: 80%;
         margin-top: 1%;
-        margin-bottom: 3%;
-        margin-left: 5%;
+        margin-bottom: 10%;
+        margin-left: 10%;
         margin-right: 10%;
     }
     .card {

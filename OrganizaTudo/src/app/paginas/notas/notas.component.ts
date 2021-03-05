@@ -125,7 +125,11 @@ export class AppNotaComponent implements OnInit {
     const id = this.data.nota._id.$oid;
 
     this.api.DeletarNota(id).then((retorno) => {
-      this.dialogRef.close();
+      const cn = confirm
+        ('Deseja excluir sua Nota mesmo?');
+      if (cn) {
+        this.dialogRef.close();
+      }
     }).catch(() => { });
 
   }

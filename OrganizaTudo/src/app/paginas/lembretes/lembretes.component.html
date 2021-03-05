@@ -1,1 +1,16 @@
-<p>lembretes works!</p>
+<img class="fab" src="../../../assets/imagens/add-icon.png" [routerLink]="['/home/lembretes']" />
+
+
+<div class="div-searchLembretes">
+    <input class="searchLembretes" type="search" placeholder="Buscar Lembrete por Título" (input)="PesquisarLembretes()"
+        [(ngModel)]="txtPesquisa" name="txtPesquisa" />
+</div>
+
+<div class="content">
+    <div class="card" *ngFor="let lembrete of lembretes">
+        <span class="titulo">{{lembrete.titulo}}</span><br>
+        <div class="btn-card">
+            <button mat-button (click)="Excluir(lembrete)" style="color: red; border: 1px solid red">Excluir</button>
+        </div>
+    </div>
+</div>
