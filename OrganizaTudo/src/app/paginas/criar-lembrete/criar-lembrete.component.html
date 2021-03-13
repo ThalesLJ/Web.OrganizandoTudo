@@ -19,7 +19,7 @@
             <!--Título do Lembrete e Botões para Aumentar/Diminuir Lista-->
             <div class="tituloLembrete">
                 <span class="subLembrete" (click)="subLembrete1();">-1</span>
-                <input class="txtTituloLembrete" value="Título do Lembrete 1" [(ngModel)]="titulo1" />
+                <input class="txtTituloLembrete" value="Título do Lembrete 1" placeholder="Título da 1º Lista" [(ngModel)]="titulo1" />
                 <span class="addLembrete" (click)="addLembrete1();">+1</span>
             </div>
 
@@ -27,7 +27,7 @@
             <div [formGroup]="_lembrete1" class="lembreteContainer">
                 <div formArrayName="itemRows">
                     <div *ngFor="let item of _lembrete1.controls.itemRows['controls']; let i=index" [formGroupName]="i">
-                        <input formControlName="item" />
+                        <input formControlName="item" placeholder="Item"/>
                     </div>
                 </div>
             </div>
@@ -40,7 +40,7 @@
             <!--Título do Lembrete e Botões para Aumentar/Diminuir Lista-->
             <div class="tituloLembrete">
                 <span class="subLembrete" (click)="subLembrete2();">-1</span>
-                <input class="txtTituloLembrete" value="Título do Lembrete 2" [(ngModel)]="titulo2" />
+                <input class="txtTituloLembrete" value="Título do Lembrete 2" placeholder="Título da 2º Lista" [(ngModel)]="titulo2" />
                 <span class="addLembrete" (click)="addLembrete2();">+1</span>
             </div>
 
@@ -48,7 +48,7 @@
             <div [formGroup]="_lembrete2" class="lembreteContainer">
                 <div formArrayName="itemRows">
                     <div *ngFor="let item of _lembrete2.controls.itemRows['controls']; let i=index" [formGroupName]="i">
-                        <input formControlName="item" />
+                        <input formControlName="item" placeholder="Item" />
                     </div>
                 </div>
             </div>
@@ -61,7 +61,7 @@
             <!--Título do Lembrete e Botões para Aumentar/Diminuir Lista-->
             <div class="tituloLembrete">
                 <span class="subLembrete" (click)="subLembrete3();">-1</span>
-                <input class="txtTituloLembrete" value="Título do Lembrete 3" [(ngModel)]="titulo3" />
+                <input class="txtTituloLembrete" value="Título do Lembrete 3" placeholder="Título da 3º Lista" [(ngModel)]="titulo3" />
                 <span class="addLembrete" (click)="addLembrete3();">+1</span>
             </div>
 
@@ -69,7 +69,7 @@
             <div [formGroup]="_lembrete3" class="lembreteContainer">
                 <div formArrayName="itemRows">
                     <div *ngFor="let item of _lembrete3.controls.itemRows['controls']; let i=index" [formGroupName]="i">
-                        <input formControlName="item" />
+                        <input formControlName="item" placeholder="Item" />
                     </div>
                 </div>
             </div>
@@ -82,7 +82,7 @@
             <!--Título do Lembrete e Botões para Aumentar/Diminuir Lista-->
             <div class="tituloLembrete">
                 <span class="subLembrete" (click)="subLembrete4();">-1</span>
-                <input class="txtTituloLembrete" value="Título do Lembrete 1" [(ngModel)]="titulo4" />
+                <input class="txtTituloLembrete" value="Título do Lembrete 1" placeholder="Título da 4º Lista" [(ngModel)]="titulo4" />
                 <span class="addLembrete" (click)="addLembrete4();">+1</span>
             </div>
 
@@ -90,7 +90,7 @@
             <div [formGroup]="_lembrete4" class="lembreteContainer">
                 <div formArrayName="itemRows">
                     <div *ngFor="let item of _lembrete4.controls.itemRows['controls']; let i=index" [formGroupName]="i">
-                        <input formControlName="item" />
+                        <input formControlName="item" placeholder="Item" />
                     </div>
                 </div>
             </div>
@@ -103,7 +103,7 @@
             <!--Título do Lembrete e Botões para Aumentar/Diminuir Lista-->
             <div class="tituloLembrete">
                 <span class="subLembrete" (click)="subLembrete5();">-1</span>
-                <input class="txtTituloLembrete" value="Título do Lembrete 5" [(ngModel)]="titulo5" />
+                <input class="txtTituloLembrete" value="Título do Lembrete 5" placeholder="Título da 5º Lista" [(ngModel)]="titulo5" />
                 <span class="addLembrete" (click)="addLembrete5();">+1</span>
             </div>
 
@@ -111,7 +111,7 @@
             <div [formGroup]="_lembrete5" class="lembreteContainer">
                 <div formArrayName="itemRows">
                     <div *ngFor="let item of _lembrete5.controls.itemRows['controls']; let i=index" [formGroupName]="i">
-                        <input formControlName="item" />
+                        <input formControlName="item" placeholder="Item" />
                     </div>
                 </div>
             </div>
