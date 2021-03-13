@@ -21,6 +21,7 @@ import { RecuperarSenhaComponent } from './paginas/recuperar-senha/recuperar-sen
 import { CriarLembreteComponent } from './paginas/criar-lembrete/criar-lembrete.component';
 import { EditarLembreteComponent } from './paginas/editar-lembrete/editar-lembrete.component';
 import { CriarContaComponent } from './paginas/criar-conta/criar-conta.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { CriarContaComponent } from './paginas/criar-conta/criar-conta.component
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     NoopAnimationsModule,
     MatDialogModule,
     MatButtonModule,

@@ -127,6 +127,17 @@ export class ApiService {
       ).toPromise();
   }
 
+  CriarLembrete(dados: any): Promise<any> {
+    return this.http.post
+      (
+        this.base + '/inserirLembrete',
+        {
+          token: localStorage.getItem('TOKEN'),
+          dados
+        }
+      ).toPromise();
+  }
+
   BuscarLembretes(): Promise<any> {
     return this.http.post
       (
