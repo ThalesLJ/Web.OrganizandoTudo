@@ -16,5 +16,6 @@
 <mat-dialog-actions align="end">
     <button mat-button (click)="salvar()" style="color: white;"
         [ngStyle]="{'background-color' : naoSalvo ? 'red' : '#1976d2'}">Salvar</button>
-    <button mat-button (click)="excluir()" style="color: white; background-color: red;">Excluir</button>
+        <button mat-button (click)="salvar_sair()" style="color: white; background-color: #1976d2;">Salvar e Sair</button>
+        <button mat-button (click)="excluir()" style="color: white; background-color: red;">Excluir</button>
 </mat-dialog-actions>

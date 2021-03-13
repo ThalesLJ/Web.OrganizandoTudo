@@ -134,6 +134,21 @@ export class AppNotaComponent implements OnInit {
 
   }
 
+  salvar_sair(): void {
+    const id = this.data.nota._id.$oid;
+    const nota = {
+      titulo: this.data.nota.titulo,
+      nota: this.data.nota.nota
+    };
+
+    this.api.AtualizarNota(id, nota).then((retorno) => {
+      this.TituloAnterior = this.data.nota.titulo;
+      this.NotaAnterior = this.data.nota.nota;
+      this.naoSalvo = false;
+      this.fechar();
+    }).catch(() => { });
+  }
+
   fechar(): void {
     if (this.naoSalvo) {
       const cn = confirm
