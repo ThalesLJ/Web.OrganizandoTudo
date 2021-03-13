@@ -20,6 +20,7 @@ import { CommonModule } from '@angular/common';
 import { RecuperarSenhaComponent } from './paginas/recuperar-senha/recuperar-senha.component';
 import { CriarLembreteComponent } from './paginas/criar-lembrete/criar-lembrete.component';
 import { EditarLembreteComponent } from './paginas/editar-lembrete/editar-lembrete.component';
+import { CriarContaComponent } from './paginas/criar-conta/criar-conta.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { EditarLembreteComponent } from './paginas/editar-lembrete/editar-lembre
     NotaComponent,
     RecuperarSenhaComponent,
     CriarLembreteComponent,
-    EditarLembreteComponent
+    EditarLembreteComponent,
+    CriarContaComponent
   ],
   entryComponents: [
     MatDialogModule,

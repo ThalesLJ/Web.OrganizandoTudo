@@ -11,6 +11,7 @@ import { PerfilComponent } from './paginas/perfil/perfil.component';
 import { RecuperarSenhaComponent } from './paginas/recuperar-senha/recuperar-senha.component';
 import { CriarLembreteComponent } from './paginas/criar-lembrete/criar-lembrete.component';
 import { EditarLembreteComponent } from './paginas/editar-lembrete/editar-lembrete.component';
+import { CriarContaComponent } from './paginas/criar-conta/criar-conta.component';
 
 const routes: Routes = [
 
@@ -21,6 +22,7 @@ const routes: Routes = [
       { path: 'login', component: LoginComponent },
       { path: 'nota/:id', component: NotaComponent },
       { path: 'recuperar-senha', component: RecuperarSenhaComponent },
+      { path: 'criar-conta', component: CriarContaComponent },
       {
         path: 'home', component: HomeComponent,
         children: [

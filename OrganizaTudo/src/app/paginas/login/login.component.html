@@ -4,7 +4,7 @@
         autocomplete="off" />
     <input class="item" type="password" [(ngModel)]="senha" name="senha" required placeholder="Senha" />
     <input class="button" type="submit" value="Acessar" />
-    <p class="link">Criar Conta</p>
+    <p class="link" [routerLink]="['/criar-conta']">Criar Conta</p>
     <p class="link" [routerLink]="['/recuperar-senha']">Recuperar Senha</p>
     <p class="mensagem">{{mensagem}}</p>
 </form>
