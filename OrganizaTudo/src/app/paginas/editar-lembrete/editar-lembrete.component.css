@@ -1,0 +1,241 @@
+@media screen and (min-width: 1000px) {
+    .form {
+        width: 50%;
+        margin-top: 1%;
+        margin-right: 25%;
+        margin-left: 25%;
+        text-align: center;
+        padding-bottom: 10%;
+    }
+    .tituloLembrete {
+        width: 100%;
+        padding: 10px;
+        text-align: center;
+        margin-bottom: 10px;
+        border-top: 0cm;
+        border-right: 0cm;
+        border-left: 0cm;
+    }
+    .btnAddLista {
+        width: 65px;
+        height: 65px;
+        border-radius: 50%;
+        position: fixed;
+        bottom: 100px;
+        right: 20px;
+        cursor: pointer;
+    }
+    .btnSubLista {
+        width: 65px;
+        height: 65px;
+        border-radius: 50%;
+        position: fixed;
+        bottom: 175px;
+        right: 20px;
+        cursor: pointer;
+    }
+    .fab {
+        width: 100%;
+        position: fixed;
+        bottom: 0px;
+        right: 0px;
+        left: 0px;
+    }
+    .btnFabSalvar {
+        width: 100%;
+        margin-bottom: 0px;
+        background-color: #35C0ED;
+        border: none;
+        color: white;
+        font-size: large;
+        padding: 10px;
+        cursor: pointer;
+    }
+    .btnFabExcluir {
+        width: 100%;
+        margin-bottom: 0px;
+        background-color: red;
+        border: none;
+        color: white;
+        font-size: large;
+        padding: 10px;
+        cursor: pointer;
+    }
+    .divLembrete {
+        padding: 10px;
+        margin-top: 1%;
+        width: 100%;
+    }
+    .divTituloLembrete {
+        padding: 10px;
+    }
+    .divItensLembrete {
+        margin-left: 20%;
+        margin-right: 20%;
+        width: auto;
+    }
+    .tituloLista {
+        width: 60%;
+        padding: 10px;
+        text-align: center;
+        margin-bottom: 10px;
+        border-top: 0cm;
+        border-right: 0cm;
+        border-left: 0cm;
+    }
+    .btnSubItem {
+        margin-left: 30%;
+        position: absolute;
+        cursor: pointer;
+        margin-top: 5px;
+        padding: 5px;
+    }
+    
+    .btnAddItem {
+        position: absolute;
+        font-size: 300%;
+        color: #35C0ED;
+        cursor: pointer;
+        border: none;
+        background-color: transparent;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .form {
+        width: 80%;
+        margin: 7%;
+        margin-top: 2%;
+        text-align: center;
+        align-items: center;
+        padding-bottom: 25%;
+    }
+    .tituloLembrete {
+        width: 100%;
+        padding: 10px;
+        text-align: center;
+        margin-bottom: 10px;
+        border-top: 0cm;
+        border-right: 0cm;
+        border-left: 0cm;
+    }
+    .btnAddLista {
+        width: 55px;
+        height: 55px;
+        border-radius: 50%;
+        position: fixed;
+        bottom: 95px;
+        right: 10px;
+        cursor: pointer;
+    }
+    .btnSubLista {
+        width: 55px;
+        height: 55px;
+        border-radius: 50%;
+        position: fixed;
+        bottom: 160px;
+        right: 10px;
+        cursor: pointer;
+    }
+    .fab {
+        width: 100%;
+        position: fixed;
+        bottom: 0px;
+        right: 0px;
+        left: 0px;
+    }
+    .btnFabSalvar {
+        width: 100%;
+        height: 5vh;
+        background-color: #35C0ED;
+        border:none;
+        color: white;
+        padding: 8px;
+    }
+    .btnFabExcluir {
+        width: 100%;
+        height: 5vh;
+        background-color: red;
+        border:none;
+        color: white;
+        padding: 8px;
+    }
+    .divLembrete {
+        padding: 10px;
+        margin-top: 1%;
+        width: 100%;
+        text-align: start;
+    }
+    .divTituloLembrete {
+        padding: 10px;
+    }
+    .divItensLembrete {
+        margin-right: 25%;
+        width: auto;
+    }
+    .tituloLista {
+        width: 66%;
+        padding: 10px;
+        text-align: center;
+        margin-bottom: 10px;
+        border-top: 0cm;
+        border-right: 0cm;
+        border-left: 0cm;
+    }
+    .btnSubItem {
+        margin-left: 60%;
+        position: absolute;
+        cursor: pointer;
+        margin-top: 3px;
+        padding: 5px;
+    }
+    .btnAddItem {
+        margin-left: 3%;
+        position: absolute;
+        font-size: 300%;
+        color: #35C0ED;
+        cursor: pointer;
+        border: none;
+        background-color: transparent;
+    }
+}
+
+
+.fields {
+    width: 100%;
+    border: 0px;
+    background-color: #ccc8;
+    color: #000000;
+    padding: 10px;
+    padding-left: 15px;
+    border-radius: 8px;
+    font-size: 15px;
+    margin-top: 1%;
+}
+
+input:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+button:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.divX1 {
+    height: 25px;
+    width: 2px;
+    margin-left: 12px;
+    background-color: red;
+    transform: rotate(45deg);
+    Z-index: 1;
+}
+
+.divX2 {
+    height: 25px;
+    width: 2px;
+    background-color: red;
+    transform: rotate(90deg);
+    Z-index: 2;
+}

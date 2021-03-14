@@ -1,1 +1,151 @@
-<p>editar-lembrete works!</p>
+<div class="form">
+
+    <!--Título do Lembrete-->
+    <input class="tituloLembrete" type="text" placeholder="Título do Lembrete" [(ngModel)]="titulo" />
+
+    <!--Listas-->
+    <div>
+
+        <!--Lista 1-->
+        <div class="divLembrete" *ngIf="lembretes >= 1">
+            <!--Título do Lembrete e Botões para Aumentar/Diminuir Lista-->
+            <div class="divTituloLembrete">
+                <input class="tituloLista" value="Título do Lembrete 1" placeholder="Título da 1ª Lista"
+                    [(ngModel)]="titulo1" />
+                <button class="btnAddItem" (click)="addItem(1);">+</button>
+            </div>
+            <!--Itens do Lembrete-->
+            <div class="divItensLembrete" [formGroup]="lembreteLista1">
+                <div formArrayName="itemRows">
+                    <div *ngFor="let item of lembreteLista1.controls.itemRows['controls']; let i=index"
+                        [formGroupName]="i">
+                        <div style="display: flex; flex-direction: row;">
+                            <input class="fields" formControlName="item" placeholder="Item" />
+                            <div class="btnSubItem" (click)="subItem(1,i);">
+                                <div class="divX1">
+                                    <div class="divX2"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Lista 2-->
+        <div class="divLembrete" *ngIf="lembretes >= 2">
+            <!--Título do Lembrete e Botões para Aumentar/Diminuir Lista-->
+            <div class="divTituloLembrete">
+                <input class="tituloLista" value="Título do Lembrete 2" placeholder="Título da 2ª Lista"
+                    [(ngModel)]="titulo2" />
+                <button class="btnAddItem" (click)="addItem(2);">+</button>
+            </div>
+            <!--Itens do Lembrete-->
+            <div class="divItensLembrete" [formGroup]="lembreteLista2">
+                <div formArrayName="itemRows">
+                    <div *ngFor="let item of lembreteLista2.controls.itemRows['controls']; let i=index"
+                        [formGroupName]="i">
+                        <div style="display: flex; flex-direction: row;">
+                            <input class="fields" formControlName="item" placeholder="Item" />
+                            <div class="btnSubItem" (click)="subItem(2,i);">
+                                <div class="divX1">
+                                    <div class="divX2"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Lista 3-->
+        <div class="divLembrete" *ngIf="lembretes >= 3">
+            <!--Título do Lembrete e Botões para Aumentar/Diminuir Lista-->
+            <div class="divTituloLembrete">
+                <input class="tituloLista" value="Título do Lembrete 3" placeholder="Título da 3ª Lista"
+                    [(ngModel)]="titulo3" />
+                <button class="btnAddItem" (click)="addItem(3);">+</button>
+            </div>
+            <!--Itens do Lembrete-->
+            <div class="divItensLembrete" [formGroup]="lembreteLista3">
+                <div formArrayName="itemRows">
+                    <div *ngFor="let item of lembreteLista3.controls.itemRows['controls']; let i=index"
+                        [formGroupName]="i">
+                        <div style="display: flex; flex-direction: row;">
+                            <input class="fields" formControlName="item" placeholder="Item" />
+                            <div class="btnSubItem" (click)="subItem(3,i);">
+                                <div class="divX1">
+                                    <div class="divX2"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Lista 4-->
+        <div class="divLembrete" *ngIf="lembretes >= 4">
+            <!--Título do Lembrete e Botões para Aumentar/Diminuir Lista-->
+            <div class="divTituloLembrete">
+                <input class="tituloLista" value="Título do Lembrete 4" placeholder="Título da 4ª Lista"
+                    [(ngModel)]="titulo4" />
+                <button class="btnAddItem" (click)="addItem(4);">+</button>
+            </div>
+            <!--Itens do Lembrete-->
+            <div class="divItensLembrete" [formGroup]="lembreteLista4">
+                <div formArrayName="itemRows">
+                    <div *ngFor="let item of lembreteLista4.controls.itemRows['controls']; let i=index"
+                        [formGroupName]="i">
+                        <div style="display: flex; flex-direction: row;">
+                            <input class="fields" formControlName="item" placeholder="Item" />
+                            <div class="btnSubItem" (click)="subItem(4,i);">
+                                <div class="divX1">
+                                    <div class="divX2"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Lista 5-->
+        <div class="divLembrete" *ngIf="lembretes >= 5">
+            <!--Título do Lembrete e Botões para Aumentar/Diminuir Lista-->
+            <div class="divTituloLembrete">
+                <input class="tituloLista" value="Título do Lembrete 5" placeholder="Título da 5ª Lista"
+                    [(ngModel)]="titulo5" />
+                <button class="btnAddItem" (click)="addItem(5);">+</button>
+            </div>
+            <!--Itens do Lembrete-->
+            <div class="divItensLembrete" [formGroup]="lembreteLista5">
+                <div formArrayName="itemRows">
+                    <div *ngFor="let item of lembreteLista5.controls.itemRows['controls']; let i=index"
+                        [formGroupName]="i">
+                        <div style="display: flex; flex-direction: row;">
+                            <input class="fields" formControlName="item" placeholder="Item" />
+                            <div class="btnSubItem" (click)="subItem(5,i);">
+                                <div class="divX1">
+                                    <div class="divX2"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<!--Botões de Add e Sub Listas-->
+<img class="btnAddLista" (click)="addLista();" src="../../../assets/imagens/{{addImage}}" />
+<img class="btnSubLista" (click)="subLista();" src="../../../assets/imagens/{{subImage}}" />
+
+<!--Botão Salvar-->
+<div class="fab">
+    <button class="btnFabSalvar" (click)="Salvar()">Salvar</button>
+    <button class="btnFabExcluir" (click)="Excluir()">Excluir</button>
+</div>

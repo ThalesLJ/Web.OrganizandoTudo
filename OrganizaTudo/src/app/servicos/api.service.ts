@@ -138,6 +138,18 @@ export class ApiService {
       ).toPromise();
   }
 
+  AtualizarLembrete(lembreteID: string, dados: any): Promise<any> {
+    return this.http.post
+      (
+        this.base + '/editarLembrete',
+        {
+          token: localStorage.getItem('TOKEN'),
+          dados,
+          lembreteID
+        }
+      ).toPromise();
+  }
+
   BuscarLembretes(): Promise<any> {
     return this.http.post
       (
@@ -165,6 +177,16 @@ export class ApiService {
         {
           token: localStorage.getItem('TOKEN'),
           lembreteID
+        }
+      ).toPromise();
+  }
+
+  PesquisarLembrete(id: string): Promise<any> {
+    return this.http.post
+      (
+        this.base + '/pesquisarLembrete',
+        {
+          token: localStorage.getItem('TOKEN'), id
         }
       ).toPromise();
   }
