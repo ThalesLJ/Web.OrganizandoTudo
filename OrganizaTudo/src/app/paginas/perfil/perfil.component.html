@@ -9,8 +9,8 @@
 
         <input placeholder="Senha Atual" type="password" title="Informe sua senha atual para salvar suas alterações!"
             [(ngModel)]="senha" name="senha" /><br>
-        <input class="button" type="button" value="Salvar Alterações" (click)="SalvarAlteracoes()"
-            title="Informe sua senha atual para salvar suas alterações!" />
+        <button class="button" (click)="SalvarAlteracoes()"
+            title="Informe sua senha atual para salvar suas alterações!">Salvar Alterações</button>
 
         <p class="link" [routerLink]="['/recuperar-senha']">Recuperar Senha</p>
         <p class="mensagem">{{mensagem}}</p>
