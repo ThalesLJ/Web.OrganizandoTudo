@@ -12,6 +12,24 @@
         border: 1px solid #ccc;
         box-shadow: 1px 1px 1px #999;
     }
+    .btnSalvar {
+        color: white;
+        width: 15%;
+        background-color: #35C0ED;
+        margin-left: 33%;
+    }
+    .btnExcluir {
+        color: white;
+        width: 15%;
+        background-color: red;
+        margin-right: 33%;
+    }
+    .btnSalvarSair {
+        color: white;
+        background-color: #35C0ED;
+        width: 30%;
+        margin: 8px;
+    }
 }
 
 @media screen and (max-width: 1000px) {
@@ -27,6 +45,22 @@
         border-radius: 5px;
         border: 1px solid #ccc;
         box-shadow: 1px 1px 1px #999;
+    }
+    .btnSalvar {
+        color: white;
+        width: 48%;
+        background-color: #35C0ED;
+    }
+    .btnExcluir {
+        color: white;
+        width: 48%;
+        background-color: red;
+    }
+    .btnSalvarSair {
+        color: white;
+        background-color: #35C0ED;
+        width: 100%;
+        margin: 10px;
     }
 }
 

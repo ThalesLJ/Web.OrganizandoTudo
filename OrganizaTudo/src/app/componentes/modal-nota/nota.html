@@ -13,9 +13,10 @@
         [(ngModel)]="data.nota.nota"></textarea>
 </div>
 
-<mat-dialog-actions align="end">
-    <button mat-button (click)="salvar()" style="color: white;"
-        [ngStyle]="{'background-color' : naoSalvo ? 'red' : '#1976d2'}">Salvar</button>
-        <button mat-button (click)="salvar_sair()" style="color: white; background-color: #1976d2;">Salvar e Fechar</button>
-        <button mat-button (click)="excluir()" style="color: white; background-color: red;">Excluir</button>
+<mat-dialog-actions align="center" style="display: flex; flex-direction: row;">
+    <button mat-button (click)="salvar()" class="btnSalvar"
+        [ngStyle]="{'background-color' : naoSalvo ? 'red' : '#35C0ED'}">Salvar
+    </button>
+    <button mat-button (click)="excluir()" class="btnExcluir">Excluir</button>
+    <button mat-button (click)="salvar_sair()" class="btnSalvarSair">Salvar e Fechar</button>
 </mat-dialog-actions>
