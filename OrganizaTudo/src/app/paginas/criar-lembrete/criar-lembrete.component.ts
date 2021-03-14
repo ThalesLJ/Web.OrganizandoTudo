@@ -22,8 +22,8 @@ export class CriarLembreteComponent implements OnInit {
   _lembrete5: any; titulo5 = '';
 
   lembretes = 1;
-
-  _lista: any;
+  addImage = 'add-icon-azul.png';
+  subImage = 'sub-icon-desativado.png';
 
   titulo = '';
 
@@ -64,15 +64,18 @@ export class CriarLembreteComponent implements OnInit {
   }
 
   Salvar(): void {
-    let lembrete: any[] = [];
+    const lembrete: any[] = [];
 
     if (this.lembretes >= 1) { lembrete.push({ titulo: this.titulo1, itens: this._lembrete1.value.itemRows }) }
     if (this.lembretes >= 2) { lembrete.push({ titulo: this.titulo2, itens: this._lembrete2.value.itemRows }) }
     if (this.lembretes >= 3) { lembrete.push({ titulo: this.titulo3, itens: this._lembrete3.value.itemRows }) }
     if (this.lembretes >= 4) { lembrete.push({ titulo: this.titulo4, itens: this._lembrete4.value.itemRows }) }
-    if (this.lembretes == 5) { lembrete.push({ titulo: this.titulo5, itens: this._lembrete5.value.itemRows }) }
+    if (this.lembretes === 5) { lembrete.push({ titulo: this.titulo5, itens: this._lembrete5.value.itemRows }) }
 
-    this.api.CriarLembrete({ 'titulo': this.titulo, lembrete }).then((retorno) => { this.router.navigate(['/home/lembretes']); }).catch((retorno) => { });
+    this.api.CriarLembrete(
+      { titulo: this.titulo, lembrete })
+      .then((retorno) => { this.router.navigate(['/home/lembretes']); })
+      .catch((retorno) => { });
   }
 
   @HostListener('keydown', ['$event']) onKeyDown(e: any): void {
@@ -84,79 +87,72 @@ export class CriarLembreteComponent implements OnInit {
   }
 
   add(): void {
-    if (this.lembretes < 5) { this.lembretes++; }
+    if (this.lembretes < 4) {
+      this.lembretes++;
+      this.addImage = 'add-icon-azul.png';
+      this.subImage = 'sub-icon-vermelho.png';
+    }
+    else if (this.lembretes === 4) {
+      this.lembretes++;
+      this.addImage = 'add-icon-desativado.png';
+      this.subImage = 'sub-icon-vermelho.png';
+    }
   }
 
   sub(): void {
-    if (this.lembretes > 1) { this.lembretes--; }
+    if (this.lembretes > 2) {
+      this.lembretes--;
+      this.subImage = 'sub-icon-vermelho.png';
+      this.addImage = 'add-icon-azul.png';
+    }
+    else if (this.lembretes === 2) {
+      this.lembretes--;
+      this.subImage = 'sub-icon-desativado.png';
+      this.addImage = 'add-icon-azul.png';
+    }
   }
 
 
   // Campos dinamicos - TAREFAS ----------------------------------------------
   // Lembrete1 - Dinamic Field
-  get lembrete1() {
+  get lembrete1(): any {
     return this._lembrete1.get('itemRows') as FormArray;
   }
 
-  addLembrete1() {
-    this.lembrete1.push(this.initItemRows());
-  }
-
-  subLembrete1() {
-    this.lembrete1.removeAt(this.lembrete1.length - 1);
-  }
-
   // Lembrete2 - Dinamic Field
-  get lembrete2() {
+  get lembrete2(): any {
     return this._lembrete2.get('itemRows') as FormArray;
   }
 
-  addLembrete2() {
-    this.lembrete2.push(this.initItemRows());
-  }
-
-  subLembrete2() {
-    this.lembrete2.removeAt(this.lembrete2.length - 1);
-  }
-
   // Lembrete3 - Dinamic Field
-  get lembrete3() {
+  get lembrete3(): any {
     return this._lembrete3.get('itemRows') as FormArray;
   }
 
-  addLembrete3() {
-    this.lembrete3.push(this.initItemRows());
-  }
-
-  subLembrete3() {
-    this.lembrete3.removeAt(this.lembrete3.length - 1);
-  }
-
   // Lembrete4 - Dinamic Field
-  get lembrete4() {
+  get lembrete4(): any {
     return this._lembrete4.get('itemRows') as FormArray;
   }
 
-  addLembrete4() {
-    this.lembrete4.push(this.initItemRows());
-  }
-
-  subLembrete4() {
-    this.lembrete4.removeAt(this.lembrete4.length - 1);
-  }
-
   // Lembrete5 - Dinamic Field
-  get lembrete5() {
+  get lembrete5(): any {
     return this._lembrete5.get('itemRows') as FormArray;
   }
 
-  addLembrete5() {
-    this.lembrete5.push(this.initItemRows());
+  addLembrete(lembrete: any): void {
+    if (lembrete === 1) { this.lembrete1.push(this.initItemRows()); }
+    if (lembrete === 2) { this.lembrete2.push(this.initItemRows()); }
+    if (lembrete === 3) { this.lembrete3.push(this.initItemRows()); }
+    if (lembrete === 4) { this.lembrete4.push(this.initItemRows()); }
+    if (lembrete === 5) { this.lembrete5.push(this.initItemRows()); }
   }
 
-  subLembrete5() {
-    this.lembrete5.removeAt(this.lembrete5.length - 1);
+  subLembrete(lembrete: any): void {
+    if (lembrete === 1) { this.lembrete1.removeAt(this.lembrete1.length - 1); }
+    if (lembrete === 2) { this.lembrete2.removeAt(this.lembrete2.length - 1); }
+    if (lembrete === 3) { this.lembrete3.removeAt(this.lembrete3.length - 1); }
+    if (lembrete === 4) { this.lembrete4.removeAt(this.lembrete4.length - 1); }
+    if (lembrete === 5) { this.lembrete5.removeAt(this.lembrete5.length - 1); }
   }
-
 
 }
