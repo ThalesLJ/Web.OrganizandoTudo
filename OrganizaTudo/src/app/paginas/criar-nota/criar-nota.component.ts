@@ -22,8 +22,12 @@ export class CriarNotaComponent implements OnInit {
   }
 
   Salvar(): void {
-    const nota = { titulo: this.titulo, nota: this.nota };
-    this.api.CriarNota(nota).then((retorno) => { this.router.navigate(['/home/notas']); }).catch((retorno) => { });
+    if(this.titulo !== '' && this.nota !== ''){
+      const nota = { titulo: this.titulo, nota: this.nota };
+      this.api.CriarNota(nota).then((retorno) => { this.router.navigate(['/home/notas']); }).catch((retorno) => { });
+    } else {
+      alert('Preencha todos os campos para salvar a Nota!');
+    }
   }
 
   @HostListener('keydown', ['$event']) onKeyDown(e: any): void {

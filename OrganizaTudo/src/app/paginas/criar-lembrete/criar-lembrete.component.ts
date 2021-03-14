@@ -64,18 +64,23 @@ export class CriarLembreteComponent implements OnInit {
   }
 
   Salvar(): void {
-    const lembrete: any[] = [];
+    if (this.titulo !== '') {
+      const lembrete: any[] = [];
 
-    if (this.lembretes >= 1) { lembrete.push({ titulo: this.titulo1, itens: this.lembreteLista1.value.itemRows }) }
-    if (this.lembretes >= 2) { lembrete.push({ titulo: this.titulo2, itens: this.lembreteLista2.value.itemRows }) }
-    if (this.lembretes >= 3) { lembrete.push({ titulo: this.titulo3, itens: this.lembreteLista3.value.itemRows }) }
-    if (this.lembretes >= 4) { lembrete.push({ titulo: this.titulo4, itens: this.lembreteLista4.value.itemRows }) }
-    if (this.lembretes === 5) { lembrete.push({ titulo: this.titulo5, itens: this.lembreteLista5.value.itemRows }) }
+      if (this.lembretes >= 1) { lembrete.push({ titulo: this.titulo1, itens: this.lembreteLista1.value.itemRows }); }
+      if (this.lembretes >= 2) { lembrete.push({ titulo: this.titulo2, itens: this.lembreteLista2.value.itemRows }); }
+      if (this.lembretes >= 3) { lembrete.push({ titulo: this.titulo3, itens: this.lembreteLista3.value.itemRows }); }
+      if (this.lembretes >= 4) { lembrete.push({ titulo: this.titulo4, itens: this.lembreteLista4.value.itemRows }); }
+      if (this.lembretes === 5) { lembrete.push({ titulo: this.titulo5, itens: this.lembreteLista5.value.itemRows }); }
 
-    this.api.CriarLembrete(
-      { titulo: this.titulo, lembrete })
-      .then((retorno) => { this.router.navigate(['/home/lembretes']); })
-      .catch((retorno) => { });
+      this.api.CriarLembrete(
+        { titulo: this.titulo, lembrete })
+        .then((retorno) => { this.router.navigate(['/home/lembretes']); })
+        .catch((retorno) => { });
+
+    } else {
+      alert('Preencha o título para salvar o Lembrete!');
+    }
   }
 
   @HostListener('keydown', ['$event']) onKeyDown(e: any): void {
@@ -127,7 +132,7 @@ export class CriarLembreteComponent implements OnInit {
     if (lembrete === 5 && this.lembrete5.length !== 1) { this.lembrete5.removeAt(posicao); }
   }
 
-// Controle de Listas
+  // Controle de Listas
   addLista(): void {
     if (this.lembretes < 4) {
       this.lembretes++;
