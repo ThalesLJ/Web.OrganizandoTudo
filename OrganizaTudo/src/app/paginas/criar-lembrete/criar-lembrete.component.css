@@ -73,16 +73,32 @@
         border-right: 0cm;
         border-left: 0cm;
     }
+    .btnSubItem {
+        margin-left: 30%;
+        position: absolute;
+        cursor: pointer;
+        margin-top: 5px;
+        padding: 5px;
+    }
+    
+    .btnAddItem {
+        position: absolute;
+        font-size: 300%;
+        color: #35C0ED;
+        cursor: pointer;
+        border: none;
+        background-color: transparent;
+    }
 }
 
 @media screen and (max-width: 1000px) {
     .form {
-        width: 50%;
-        margin-top: 1%;
-        margin-right: 25%;
-        margin-left: 25%;
+        width: 80%;
+        margin: 7%;
+        margin-top: 2%;
         text-align: center;
-        padding-bottom: 10%;
+        align-items: center;
+        padding-bottom: 12%;
     }
     .tituloLembrete {
         width: 100%;
@@ -94,21 +110,21 @@
         border-left: 0cm;
     }
     .btnAddLista {
-        width: 65px;
-        height: 65px;
+        width: 55px;
+        height: 55px;
         border-radius: 50%;
         position: fixed;
-        bottom: 60px;
-        right: 20px;
+        bottom: 50px;
+        right: 10px;
         cursor: pointer;
     }
     .btnSubLista {
-        width: 65px;
-        height: 65px;
+        width: 55px;
+        height: 55px;
         border-radius: 50%;
         position: fixed;
-        bottom: 130px;
-        right: 20px;
+        bottom: 110px;
+        right: 10px;
         cursor: pointer;
     }
     .fab {
@@ -120,29 +136,27 @@
     }
     .btnFab {
         width: 100%;
-        margin-bottom: 0px;
+        height: 5vh;
         background-color: #35C0ED;
-        border: none;
+        border:none;
         color: white;
-        font-size: large;
-        padding: 10px;
-        cursor: pointer;
+        padding: 8px;
     }
     .divLembrete {
         padding: 10px;
         margin-top: 1%;
         width: 100%;
+        text-align: start;
     }
     .divTituloLembrete {
         padding: 10px;
     }
     .divItensLembrete {
-        margin-left: 20%;
-        margin-right: 20%;
+        margin-right: 25%;
         width: auto;
     }
     .tituloLista {
-        width: 60%;
+        width: 66%;
         padding: 10px;
         text-align: center;
         margin-bottom: 10px;
@@ -150,24 +164,24 @@
         border-right: 0cm;
         border-left: 0cm;
     }
+    .btnSubItem {
+        margin-left: 60%;
+        position: absolute;
+        cursor: pointer;
+        margin-top: 3px;
+        padding: 5px;
+    }
+    .btnAddItem {
+        margin-left: 3%;
+        position: absolute;
+        font-size: 300%;
+        color: #35C0ED;
+        cursor: pointer;
+        border: none;
+        background-color: transparent;
+    }
 }
 
-.btnSubItem {
-    margin-left: 30%;
-    position: absolute;
-    cursor: pointer;
-    margin-top: 5px;
-    padding: 5px;
-}
-
-.btnAddItem {
-    position: absolute;
-    font-size: 300%;
-    color: #35C0ED;
-    cursor: pointer;
-    border: none;
-    background-color: transparent;
-}
 
 .fields {
     width: 100%;
