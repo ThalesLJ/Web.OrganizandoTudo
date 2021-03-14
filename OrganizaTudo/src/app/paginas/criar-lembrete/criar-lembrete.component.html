@@ -1,16 +1,17 @@
 <div class="form">
 
-    <!--Título da Lista-->
+    <!--Título do Lembrete-->
     <input class="tituloLembrete" type="text" placeholder="Título do Lembrete" [(ngModel)]="titulo" />
 
-    <!--Lista de Lembretes-->
+    <!--Listas-->
     <div>
 
-        <!--Lembrete 1-->
+        <!--Lista 1-->
         <div class="divLembrete" *ngIf="lembretes >= 1">
             <!--Título do Lembrete e Botões para Aumentar/Diminuir Lista-->
             <div class="divTituloLembrete">
-                <input class="tituloLista" value="Título do Lembrete 1" placeholder="Título da 1ª Lista" [(ngModel)]="titulo1" />
+                <input class="tituloLista" value="Título do Lembrete 1" placeholder="Título da 1ª Lista"
+                    [(ngModel)]="titulo1" />
                 <button class="btnAddItem" (click)="addLembrete(1);">+</button>
             </div>
             <!--Itens do Lembrete-->
@@ -18,17 +19,18 @@
                 <div formArrayName="itemRows">
                     <div *ngFor="let item of _lembrete1.controls.itemRows['controls']; let i=index" [formGroupName]="i">
                         <input class="fields" formControlName="item" placeholder="Item" />
-                        <button class="btnSubItem" (click)="subLembrete(1);">x</button>
+                        <button class="btnSubItem" (click)="subLembrete(1,i);">x</button>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!--Lembrete 2-->
+        <!--Lista 2-->
         <div class="divLembrete" *ngIf="lembretes >= 2">
             <!--Título do Lembrete e Botões para Aumentar/Diminuir Lista-->
             <div class="divTituloLembrete">
-                <input class="tituloLista" value="Título do Lembrete 2" placeholder="Título da 2ª Lista" [(ngModel)]="titulo2" />
+                <input class="tituloLista" value="Título do Lembrete 2" placeholder="Título da 2ª Lista"
+                    [(ngModel)]="titulo2" />
                 <button class="btnAddItem" (click)="addLembrete(2);">+</button>
             </div>
             <!--Itens do Lembrete-->
@@ -36,17 +38,18 @@
                 <div formArrayName="itemRows">
                     <div *ngFor="let item of _lembrete2.controls.itemRows['controls']; let i=index" [formGroupName]="i">
                         <input class="fields" formControlName="item" placeholder="Item" />
-                        <button class="btnSubItem" (click)="subLembrete(2);">x</button>
+                        <button class="btnSubItem" (click)="subLembrete(2,i);">x</button>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!--Lembrete 3-->
+        <!--Lista 3-->
         <div class="divLembrete" *ngIf="lembretes >= 3">
             <!--Título do Lembrete e Botões para Aumentar/Diminuir Lista-->
             <div class="divTituloLembrete">
-                <input class="tituloLista" value="Título do Lembrete 3" placeholder="Título da 3ª Lista" [(ngModel)]="titulo3" />
+                <input class="tituloLista" value="Título do Lembrete 3" placeholder="Título da 3ª Lista"
+                    [(ngModel)]="titulo3" />
                 <button class="btnAddItem" (click)="addLembrete(3);">+</button>
             </div>
             <!--Itens do Lembrete-->
@@ -54,17 +57,18 @@
                 <div formArrayName="itemRows">
                     <div *ngFor="let item of _lembrete3.controls.itemRows['controls']; let i=index" [formGroupName]="i">
                         <input class="fields" formControlName="item" placeholder="Item" />
-                        <button class="btnSubItem" (click)="subLembrete(3);">x</button>
+                        <button class="btnSubItem" (click)="subLembrete(3,i);">x</button>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!--Lembrete 4-->
+        <!--Lista 4-->
         <div class="divLembrete" *ngIf="lembretes >= 4">
             <!--Título do Lembrete e Botões para Aumentar/Diminuir Lista-->
             <div class="divTituloLembrete">
-                <input class="tituloLista" value="Título do Lembrete 4" placeholder="Título da 4ª Lista" [(ngModel)]="titulo4" />
+                <input class="tituloLista" value="Título do Lembrete 4" placeholder="Título da 4ª Lista"
+                    [(ngModel)]="titulo4" />
                 <button class="btnAddItem" (click)="addLembrete(4);">+</button>
             </div>
             <!--Itens do Lembrete-->
@@ -72,17 +76,18 @@
                 <div formArrayName="itemRows">
                     <div *ngFor="let item of _lembrete4.controls.itemRows['controls']; let i=index" [formGroupName]="i">
                         <input class="fields" formControlName="item" placeholder="Item" />
-                        <button class="btnSubItem" (click)="subLembrete(4);">x</button>
+                        <button class="btnSubItem" (click)="subLembrete(4,i);">x</button>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!--Lembrete 5-->
+        <!--Lista 5-->
         <div class="divLembrete" *ngIf="lembretes >= 5">
             <!--Título do Lembrete e Botões para Aumentar/Diminuir Lista-->
             <div class="divTituloLembrete">
-                <input class="tituloLista" value="Título do Lembrete 5" placeholder="Título da 5ª Lista" [(ngModel)]="titulo5" />
+                <input class="tituloLista" value="Título do Lembrete 5" placeholder="Título da 5ª Lista"
+                    [(ngModel)]="titulo5" />
                 <button class="btnAddItem" (click)="addLembrete(5);">+</button>
             </div>
             <!--Itens do Lembrete-->
@@ -90,7 +95,7 @@
                 <div formArrayName="itemRows">
                     <div *ngFor="let item of _lembrete5.controls.itemRows['controls']; let i=index" [formGroupName]="i">
                         <input class="fields" formControlName="item" placeholder="Item" />
-                        <button class="btnSubItem" (click)="subLembrete(5);">x</button>
+                        <button class="btnSubItem" (click)="subLembrete(5,i);">x</button>
                     </div>
                 </div>
             </div>

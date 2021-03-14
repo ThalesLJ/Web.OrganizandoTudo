@@ -147,12 +147,12 @@ export class CriarLembreteComponent implements OnInit {
     if (lembrete === 5) { this.lembrete5.push(this.initItemRows()); }
   }
 
-  subLembrete(lembrete: any): void {
-    if (lembrete === 1) { this.lembrete1.removeAt(this.lembrete1.length - 1); }
-    if (lembrete === 2) { this.lembrete2.removeAt(this.lembrete2.length - 1); }
-    if (lembrete === 3) { this.lembrete3.removeAt(this.lembrete3.length - 1); }
-    if (lembrete === 4) { this.lembrete4.removeAt(this.lembrete4.length - 1); }
-    if (lembrete === 5) { this.lembrete5.removeAt(this.lembrete5.length - 1); }
+  subLembrete(lembrete: any, posicao: any): void {
+    if (lembrete === 1 && this.lembrete1.length !== 1) { this.lembrete1.removeAt(posicao); }
+    if (lembrete === 2 && this.lembrete2.length !== 1) { this.lembrete2.removeAt(this.lembrete2.length - 1); }
+    if (lembrete === 3 && this.lembrete3.length !== 1) { this.lembrete3.removeAt(this.lembrete3.length - 1); }
+    if (lembrete === 4 && this.lembrete4.length !== 1) { this.lembrete4.removeAt(this.lembrete4.length - 1); }
+    if (lembrete === 5 && this.lembrete5.length !== 1) { this.lembrete5.removeAt(this.lembrete5.length - 1); }
   }
 
 }
