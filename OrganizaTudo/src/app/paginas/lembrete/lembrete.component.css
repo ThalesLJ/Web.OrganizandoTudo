@@ -1,0 +1,308 @@
+@media screen and (max-width: 1000px) {
+    .form {
+        width: 80%;
+        margin: 7%;
+        margin-top: 2%;
+        text-align: center;
+        align-items: center;
+        padding-bottom: 20%;
+    }
+    .tituloLembrete {
+        width: 100%;
+        padding: 10px;
+        text-align: center;
+        margin-bottom: 10px;
+        border-top: 0cm;
+        border-right: 0cm;
+        border-left: 0cm;
+    }
+    .btnAddLista {
+        width: 55px;
+        height: 55px;
+        border-radius: 50%;
+        position: fixed;
+        bottom: 95px;
+        right: 10px;
+        cursor: pointer;
+    }
+    .btnSubLista {
+        width: 55px;
+        height: 55px;
+        border-radius: 50%;
+        position: fixed;
+        bottom: 160px;
+        right: 10px;
+        cursor: pointer;
+    }
+    .fab {
+        width: 100%;
+        position: fixed;
+        bottom: 0px;
+        right: 0px;
+        left: 0px;
+    }
+    .btnFabSalvar {
+        width: 100%;
+        height: 5vh;
+        background-color: #35C0ED;
+        border: none;
+        color: white;
+        padding: 8px;
+    }
+    .btnFabExcluir {
+        width: 100%;
+        height: 5vh;
+        background-color: red;
+        border: none;
+        color: white;
+        padding: 8px;
+    }
+    .divLembrete {
+        padding: 10px;
+        margin-top: 1%;
+        width: 100%;
+        text-align: start;
+    }
+    .divTituloLembrete {
+        padding: 10px;
+    }
+    .divItensLembrete {
+        margin-right: 25%;
+        width: auto;
+    }
+    .tituloLista {
+        width: 66%;
+        padding: 10px;
+        text-align: center;
+        margin-bottom: 10px;
+        border-top: 0cm;
+        border-right: 0cm;
+        border-left: 0cm;
+    }
+    .btnSubItem {
+        margin-left: 60%;
+        position: absolute;
+        cursor: pointer;
+        margin-top: 3px;
+        padding: 5px;
+    }
+    .btnAddItem {
+        margin-left: 3%;
+        position: absolute;
+        font-size: 300%;
+        color: #35C0ED;
+        cursor: pointer;
+        border: none;
+        background-color: transparent;
+    }
+    .statusFields {
+        margin-top: 5px;
+        padding: 5px;
+        width: 10%;
+        height: 10vh;
+    }
+    .homefab {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        position: fixed;
+        bottom: 50px;
+        right: 20px;
+        cursor: pointer;
+    }
+    input {
+        width: 79%;
+        padding: 10px;
+        border-top: 0;
+        border-right: 0;
+        border-left: 0;
+    }
+    textarea {
+        max-width: 79%;
+        min-width: 79%;
+        max-height: 70vh;
+        min-height: 50vh;
+        padding: 10px;
+        border-top: 0;
+        border-right: 0;
+        border-left: 0;
+    }
+    .tituloLembreteReadOnly {
+        margin-left: 2%;
+        margin-right: 2%;
+        text-align: center
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .form {
+        width: 50%;
+        padding-top: 1%;
+        margin-right: 25%;
+        margin-left: 25%;
+        text-align: center;
+        padding-bottom: 8%;
+    }
+    .tituloLembrete {
+        width: 100%;
+        padding: 10px;
+        text-align: center;
+        margin-bottom: 10px;
+        border-top: 0cm;
+        border-right: 0cm;
+        border-left: 0cm;
+    }
+    .btnAddLista {
+        width: 65px;
+        height: 65px;
+        border-radius: 50%;
+        position: fixed;
+        bottom: 100px;
+        right: 20px;
+        cursor: pointer;
+    }
+    .btnSubLista {
+        width: 65px;
+        height: 65px;
+        border-radius: 50%;
+        position: fixed;
+        bottom: 175px;
+        right: 20px;
+        cursor: pointer;
+    }
+    .fab {
+        width: 100%;
+        position: fixed;
+        bottom: 0px;
+        right: 0px;
+        left: 0px;
+    }
+    .btnFabSalvar {
+        width: 100%;
+        margin-bottom: 0px;
+        background-color: #35C0ED;
+        border: none;
+        color: white;
+        font-size: large;
+        padding: 10px;
+        cursor: pointer;
+    }
+    .btnFabExcluir {
+        width: 100%;
+        margin-bottom: 0px;
+        background-color: red;
+        border: none;
+        color: white;
+        font-size: large;
+        padding: 10px;
+        cursor: pointer;
+    }
+    .divLembrete {
+        padding: 10px;
+        margin-top: 1%;
+        width: 100%;
+    }
+    .divTituloLembrete {
+        padding: 10px;
+    }
+    .divItensLembrete {
+        margin-left: 20%;
+        margin-right: 20%;
+        width: auto;
+    }
+    .tituloLista {
+        width: 60%;
+        padding: 10px;
+        text-align: center;
+        margin-bottom: 10px;
+        border-top: 0cm;
+        border-right: 0cm;
+        border-left: 0cm;
+    }
+    .btnSubItem {
+        margin-left: 30%;
+        position: absolute;
+        cursor: pointer;
+        margin-top: 5px;
+        padding: 5px;
+    }
+    .btnAddItem {
+        position: absolute;
+        font-size: 300%;
+        color: #35C0ED;
+        cursor: pointer;
+        border: none;
+        background-color: transparent;
+    }
+    .statusFields {
+        margin-top: 5px;
+        padding: 5px;
+        margin-top: 1%;
+        width: 3%;
+        height: 3vh;
+    }
+    .homefab {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        position: fixed;
+        bottom: 70px;
+        right: 30px;
+        cursor: pointer;
+    }
+    input {
+        width: 79%;
+        padding: 10px;
+        border-top: 0;
+        border-right: 0;
+        border-left: 0;
+    }
+    textarea {
+        max-width: 79%;
+        min-width: 79%;
+        max-height: 85vh;
+        min-height: 60vh;
+        padding: 10px;
+        border-top: 0;
+        border-right: 0;
+        border-left: 0;
+    }
+    .tituloLembreteReadOnly {
+        margin-left: 21%;
+        margin-right: 20%;
+        width: 58%;
+        text-align: center
+    }
+}
+
+.fields {
+    width: 100%;
+    border: 0px;
+    background-color: #ccc8;
+    color: #000000;
+    padding: 10px;
+    padding-left: 15px;
+    border-radius: 8px;
+    font-size: 15px;
+    margin-top: 1%;
+}
+
+input:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+textarea:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+input:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+img:focus {
+    outline: none;
+    box-shadow: none;
+}

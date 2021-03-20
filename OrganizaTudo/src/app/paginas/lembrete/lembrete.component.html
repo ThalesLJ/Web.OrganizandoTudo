@@ -1,1 +1,120 @@
-<p>lembrete works!</p>
+<img class="homefab" src="../favicon.ico" [routerLink]="['/home/notas']" />
+
+<div class="form">
+    
+    <div *ngIf="!publico">
+        <span>{{mensagem}}</span>
+    </div>
+
+    <div *ngIf="publico">
+
+        <span class="tituloLembreteReadOnly" readonly>{{titulo}}</span><br>
+
+        <!--Lista 1-->
+        <div class="divLembrete" *ngIf="lembretes >= 1">
+            <!--Título do Lembrete e Botões para Aumentar/Diminuir Lista-->
+            <div class="divTituloLembrete">
+                <span class="tituloLista">{{titulo1}}</span>
+            </div>
+            <!--Itens do Lembrete-->
+            <div class="divItensLembrete" [formGroup]="lembreteLista1">
+                <div formArrayName="itemRows">
+                    <div *ngFor="let item of lembreteLista1.controls.itemRows['controls']; let i=index"
+                        [formGroupName]="i">
+                        <div style="display: flex; flex-direction: row;">
+                            <input class="statusFields" type="checkbox" formControlName="status" onclick="return false;" />
+                            <input class="fields" formControlName="item" placeholder="Item" readonly />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Lista 2-->
+        <div class="divLembrete" *ngIf="lembretes >= 2">
+            <!--Título do Lembrete e Botões para Aumentar/Diminuir Lista-->
+            <div class="divTituloLembrete">
+                <span class="tituloLista">{{titulo2}}</span>
+            </div>
+            <!--Itens do Lembrete-->
+            <div class="divItensLembrete" [formGroup]="lembreteLista2">
+                <div formArrayName="itemRows">
+                    <div *ngFor="let item of lembreteLista2.controls.itemRows['controls']; let i=index"
+                        [formGroupName]="i">
+                        <div style="display: flex; flex-direction: row;">
+                            <input class="statusFields" type="checkbox" formControlName="status" onclick="return false;" />
+                            <input class="fields" formControlName="item" placeholder="Item" readonly />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Lista 3-->
+        <div class="divLembrete" *ngIf="lembretes >= 3">
+            <!--Título do Lembrete e Botões para Aumentar/Diminuir Lista-->
+            <div class="divTituloLembrete">
+                <span class="tituloLista">{{titulo3}}</span>
+            </div>
+            <!--Itens do Lembrete-->
+            <div class="divItensLembrete" [formGroup]="lembreteLista3">
+                <div formArrayName="itemRows">
+                    <div *ngFor="let item of lembreteLista3.controls.itemRows['controls']; let i=index"
+                        [formGroupName]="i">
+                        <div style="display: flex; flex-direction: row;">
+                            <input class="statusFields" type="checkbox" formControlName="status" onclick="return false;" />
+                            <input class="fields" formControlName="item" placeholder="Item" readonly />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Lista 4-->
+        <div class="divLembrete" *ngIf="lembretes >= 4">
+            <!--Título do Lembrete e Botões para Aumentar/Diminuir Lista-->
+            <div class="divTituloLembrete">
+                <span class="tituloLista">{{titulo4}}</span>
+            </div>
+            <!--Itens do Lembrete-->
+            <div class="divItensLembrete" [formGroup]="lembreteLista4">
+                <div formArrayName="itemRows">
+                    <div *ngFor="let item of lembreteLista4.controls.itemRows['controls']; let i=index"
+                        [formGroupName]="i">
+                        <div style="display: flex; flex-direction: row;">
+                            <input class="statusFields" type="checkbox" formControlName="status" onclick="return false;" />
+                            <input class="fields" formControlName="item" placeholder="Item" readonly />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Lista 5-->
+        <div class="divLembrete" *ngIf="lembretes >= 5">
+            <!--Título do Lembrete e Botões para Aumentar/Diminuir Lista-->
+            <div class="divTituloLembrete">
+                <span class="tituloLista">{{titulo5}}</span>
+            </div>
+            <!--Itens do Lembrete-->
+            <div class="divItensLembrete" [formGroup]="lembreteLista5">
+                <div formArrayName="itemRows">
+                    <div *ngFor="let item of lembreteLista5.controls.itemRows['controls']; let i=index"
+                        [formGroupName]="i">
+                        <div style="display: flex; flex-direction: row;">
+                            <input class="statusFields" type="checkbox" formControlName="status" onclick="return false;" />
+                            <input class="fields" formControlName="item" placeholder="Item" readonly />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<!--Botão Salvar-->
+<div class="fab">
+    <button class="btnFabSalvar">Gerar Relatório</button>
+</div>
