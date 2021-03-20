@@ -90,7 +90,6 @@
         margin-top: 5px;
         padding: 5px;
     }
-    
     .btnAddItem {
         position: absolute;
         font-size: 300%;
@@ -98,6 +97,15 @@
         cursor: pointer;
         border: none;
         background-color: transparent;
+    }
+    .statusFields {
+        cursor: pointer;
+        margin-top: 5px;
+        padding: 5px;
+        cursor: pointer;
+        margin-top: 1%;
+        width: 3%;
+        height: 3vh;
     }
 }
 
@@ -148,7 +156,7 @@
         width: 100%;
         height: 5vh;
         background-color: #35C0ED;
-        border:none;
+        border: none;
         color: white;
         padding: 8px;
     }
@@ -156,7 +164,7 @@
         width: 100%;
         height: 5vh;
         background-color: red;
-        border:none;
+        border: none;
         color: white;
         padding: 8px;
     }
@@ -198,8 +206,15 @@
         border: none;
         background-color: transparent;
     }
+    .statusFields {
+        cursor: pointer;
+        margin-top: 5px;
+        padding: 5px;
+        cursor: pointer;
+        width: 10%;
+        height: 10vh;
+    }
 }
-
 
 .fields {
     width: 100%;

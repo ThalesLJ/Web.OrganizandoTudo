@@ -20,6 +20,7 @@
                     <div *ngFor="let item of lembreteLista1.controls.itemRows['controls']; let i=index"
                         [formGroupName]="i">
                         <div style="display: flex; flex-direction: row;">
+                            <input class="statusFields" type="checkbox" formControlName="status" />
                             <input class="fields" formControlName="item" placeholder="Item" />
                             <div class="btnSubItem" (click)="subItem(1,i);">
                                 <div class="divX1">
@@ -46,6 +47,7 @@
                     <div *ngFor="let item of lembreteLista2.controls.itemRows['controls']; let i=index"
                         [formGroupName]="i">
                         <div style="display: flex; flex-direction: row;">
+                            <input class="statusFields" type="checkbox" formControlName="status" />
                             <input class="fields" formControlName="item" placeholder="Item" />
                             <div class="btnSubItem" (click)="subItem(2,i);">
                                 <div class="divX1">
@@ -72,6 +74,7 @@
                     <div *ngFor="let item of lembreteLista3.controls.itemRows['controls']; let i=index"
                         [formGroupName]="i">
                         <div style="display: flex; flex-direction: row;">
+                            <input class="statusFields" type="checkbox" formControlName="status" />
                             <input class="fields" formControlName="item" placeholder="Item" />
                             <div class="btnSubItem" (click)="subItem(3,i);">
                                 <div class="divX1">
@@ -98,6 +101,7 @@
                     <div *ngFor="let item of lembreteLista4.controls.itemRows['controls']; let i=index"
                         [formGroupName]="i">
                         <div style="display: flex; flex-direction: row;">
+                            <input class="statusFields" type="checkbox" formControlName="status" />
                             <input class="fields" formControlName="item" placeholder="Item" />
                             <div class="btnSubItem" (click)="subItem(4,i);">
                                 <div class="divX1">
@@ -124,6 +128,7 @@
                     <div *ngFor="let item of lembreteLista5.controls.itemRows['controls']; let i=index"
                         [formGroupName]="i">
                         <div style="display: flex; flex-direction: row;">
+                            <input class="statusFields" type="checkbox" formControlName="status" />
                             <input class="fields" formControlName="item" placeholder="Item" />
                             <div class="btnSubItem" (click)="subItem(5,i);">
                                 <div class="divX1">

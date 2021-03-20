@@ -36,30 +36,35 @@ export class EditarLembreteComponent implements OnInit {
 
     this.lembreteLista1 = this.fBuilder.group({
       item: [''],
+      status: [false],
       itemRows: this.fBuilder.array([this.initItemRows()])
     });
     this.lembrete1.removeAt(0);
 
     this.lembreteLista2 = this.fBuilder.group({
       item: [''],
+      status: [false],
       itemRows: this.fBuilder.array([this.initItemRows()])
     });
     this.lembrete2.removeAt(0);
 
     this.lembreteLista3 = this.fBuilder.group({
       item: [''],
+      status: [false],
       itemRows: this.fBuilder.array([this.initItemRows()])
     });
     this.lembrete3.removeAt(0);
 
     this.lembreteLista4 = this.fBuilder.group({
       item: [''],
+      status: [false],
       itemRows: this.fBuilder.array([this.initItemRows()])
     });
     this.lembrete4.removeAt(0);
 
     this.lembreteLista5 = this.fBuilder.group({
       item: [''],
+      status: [false],
       itemRows: this.fBuilder.array([this.initItemRows()])
     });
     this.lembrete5.removeAt(0);
@@ -68,13 +73,15 @@ export class EditarLembreteComponent implements OnInit {
 
   initItemRows(): any {
     return this.fBuilder.group({
-      item: ['']
+      item: [''],
+      status: [false],
     });
   }
 
-  initItemWithtext(item: string): any {
+  initItemWithtext(item: string, status: boolean): any {
     return this.fBuilder.group({
-      item: [item]
+      item: [item],
+      status: [status],
     });
   }
 
@@ -131,35 +138,35 @@ export class EditarLembreteComponent implements OnInit {
           if (this.lembretes >= 1) {
             this.titulo1 = retorno.lembrete[0].titulo;
             for (let i = 0; i < retorno.lembrete[0].itens.length;) {
-              this.addItemWithText(1, retorno.lembrete[0].itens[i].item);
+              this.addItemWithText(1, retorno.lembrete[0].itens[i].item, retorno.lembrete[0].itens[i].status);
               i++;
             }
           }
           if (this.lembretes >= 2) {
             this.titulo2 = retorno.lembrete[1].titulo;
             for (let i = 0; i < retorno.lembrete[1].itens.length;) {
-              this.addItemWithText(2, retorno.lembrete[1].itens[i].item);
+              this.addItemWithText(2, retorno.lembrete[1].itens[i].item, retorno.lembrete[1].itens[i].status);
               i++;
             }
           }
           if (this.lembretes >= 3) {
             this.titulo3 = retorno.lembrete[2].titulo;
             for (let i = 0; i < retorno.lembrete[2].itens.length;) {
-              this.addItemWithText(3, retorno.lembrete[2].itens[i].item);
+              this.addItemWithText(3, retorno.lembrete[2].itens[i].item, retorno.lembrete[2].itens[i].status);
               i++;
             }
           }
           if (this.lembretes >= 4) {
             this.titulo4 = retorno.lembrete[3].titulo;
             for (let i = 0; i < retorno.lembrete[3].itens.length;) {
-              this.addItemWithText(4, retorno.lembrete[3].itens[i].item);
+              this.addItemWithText(4, retorno.lembrete[3].itens[i].item, retorno.lembrete[3].itens[i].status);
               i++;
             }
           }
           if (this.lembretes >= 5) {
             this.titulo5 = retorno.lembrete[4].titulo;
             for (let i = 0; i < retorno.lembrete[4].itens.length;) {
-              this.addItemWithText(5, retorno.lembrete[4].itens[i].item);
+              this.addItemWithText(5, retorno.lembrete[4].itens[i].item, retorno.lembrete[4].itens[i].status);
               i++;
             }
           }
@@ -211,12 +218,12 @@ export class EditarLembreteComponent implements OnInit {
     if (lembrete === 5) { this.lembrete5.push(this.initItemRows()); }
   }
 
-  addItemWithText(lembrete: any, item: string): void {
-    if (lembrete === 1) { this.lembrete1.push(this.initItemWithtext(item)); }
-    if (lembrete === 2) { this.lembrete2.push(this.initItemWithtext(item)); }
-    if (lembrete === 3) { this.lembrete3.push(this.initItemWithtext(item)); }
-    if (lembrete === 4) { this.lembrete4.push(this.initItemWithtext(item)); }
-    if (lembrete === 5) { this.lembrete5.push(this.initItemWithtext(item)); }
+  addItemWithText(lembrete: any, item: string, status: boolean): void {
+    if (lembrete === 1) { this.lembrete1.push(this.initItemWithtext(item, status)); }
+    if (lembrete === 2) { this.lembrete2.push(this.initItemWithtext(item, status)); }
+    if (lembrete === 3) { this.lembrete3.push(this.initItemWithtext(item, status)); }
+    if (lembrete === 4) { this.lembrete4.push(this.initItemWithtext(item, status)); }
+    if (lembrete === 5) { this.lembrete5.push(this.initItemWithtext(item, status)); }
   }
 
   subItem(lembrete: any, posicao: any): void {

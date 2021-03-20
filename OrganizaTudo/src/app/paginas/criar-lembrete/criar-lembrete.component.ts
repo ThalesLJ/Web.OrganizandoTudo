@@ -32,26 +32,31 @@ export class CriarLembreteComponent implements OnInit {
 
     this.lembreteLista1 = this.fBuilder.group({
       item: [''],
+      status: [false],
       itemRows: this.fBuilder.array([this.initItemRows()])
     });
 
     this.lembreteLista2 = this.fBuilder.group({
       item: [''],
+      status: [false],
       itemRows: this.fBuilder.array([this.initItemRows()])
     });
 
     this.lembreteLista3 = this.fBuilder.group({
       item: [''],
+      status: [false],
       itemRows: this.fBuilder.array([this.initItemRows()])
     });
 
     this.lembreteLista4 = this.fBuilder.group({
       item: [''],
+      status: [false],
       itemRows: this.fBuilder.array([this.initItemRows()])
     });
 
     this.lembreteLista5 = this.fBuilder.group({
       item: [''],
+      status: [false],
       itemRows: this.fBuilder.array([this.initItemRows()])
     });
 
@@ -59,7 +64,8 @@ export class CriarLembreteComponent implements OnInit {
 
   initItemRows(): any {
     return this.fBuilder.group({
-      item: ['']
+      item: [''],
+      status: [false],
     });
   }
 
