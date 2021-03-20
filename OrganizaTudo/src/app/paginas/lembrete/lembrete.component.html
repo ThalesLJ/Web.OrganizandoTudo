@@ -1,7 +1,7 @@
 <img class="homefab" src="../favicon.ico" [routerLink]="['/home/lembretes']" />
 
 <div class="form">
-    
+
     <div *ngIf="!publico">
         <span>{{mensagem}}</span>
     </div>
@@ -22,7 +22,8 @@
                     <div *ngFor="let item of lembreteLista1.controls.itemRows['controls']; let i=index"
                         [formGroupName]="i">
                         <div style="display: flex; flex-direction: row;">
-                            <input class="statusFields" type="checkbox" formControlName="status" onclick="return false;" />
+                            <input class="statusFields" type="checkbox" formControlName="status"
+                                onclick="return false;" />
                             <input class="fields" formControlName="item" placeholder="Item" readonly />
                         </div>
                     </div>
@@ -42,7 +43,8 @@
                     <div *ngFor="let item of lembreteLista2.controls.itemRows['controls']; let i=index"
                         [formGroupName]="i">
                         <div style="display: flex; flex-direction: row;">
-                            <input class="statusFields" type="checkbox" formControlName="status" onclick="return false;" />
+                            <input class="statusFields" type="checkbox" formControlName="status"
+                                onclick="return false;" />
                             <input class="fields" formControlName="item" placeholder="Item" readonly />
                         </div>
                     </div>
@@ -62,7 +64,8 @@
                     <div *ngFor="let item of lembreteLista3.controls.itemRows['controls']; let i=index"
                         [formGroupName]="i">
                         <div style="display: flex; flex-direction: row;">
-                            <input class="statusFields" type="checkbox" formControlName="status" onclick="return false;" />
+                            <input class="statusFields" type="checkbox" formControlName="status"
+                                onclick="return false;" />
                             <input class="fields" formControlName="item" placeholder="Item" readonly />
                         </div>
                     </div>
@@ -82,7 +85,8 @@
                     <div *ngFor="let item of lembreteLista4.controls.itemRows['controls']; let i=index"
                         [formGroupName]="i">
                         <div style="display: flex; flex-direction: row;">
-                            <input class="statusFields" type="checkbox" formControlName="status" onclick="return false;" />
+                            <input class="statusFields" type="checkbox" formControlName="status"
+                                onclick="return false;" />
                             <input class="fields" formControlName="item" placeholder="Item" readonly />
                         </div>
                     </div>
@@ -102,7 +106,8 @@
                     <div *ngFor="let item of lembreteLista5.controls.itemRows['controls']; let i=index"
                         [formGroupName]="i">
                         <div style="display: flex; flex-direction: row;">
-                            <input class="statusFields" type="checkbox" formControlName="status" onclick="return false;" />
+                            <input class="statusFields" type="checkbox" formControlName="status"
+                                onclick="return false;" />
                             <input class="fields" formControlName="item" placeholder="Item" readonly />
                         </div>
                     </div>
@@ -116,5 +121,5 @@
 
 <!--Botão Salvar-->
 <div class="fab">
-    <button class="btnFabSalvar">Gerar Relatório</button>
+    <button class="btnFabSalvar" [routerLink]="['/status',id]">Gerar Status</button>
 </div>

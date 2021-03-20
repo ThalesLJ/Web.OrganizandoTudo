@@ -10,20 +10,23 @@
     <div class="card" *ngFor="let lembrete of lembretes">
         <span class="titulo" [routerLink]="['/home/editar-lembrete',lembrete._id.$oid]">{{lembrete.titulo}}</span><br>
 
-        <div *ngIf="lembrete.publico">
+        <div *ngIf="lembrete.publico" style="margin-top: 5%;">
             <input type="checkbox" checked id="{{lembrete._id.$oid}}" style="margin-top: 10%; cursor: pointer;"
                 (change)="AtualizarPrivacidade(lembrete, $event)" />
             <a [routerLink]="['/lembrete',lembrete._id.$oid]" class="checkText">Lembrete Público</a>
         </div>
 
-        <div *ngIf="!lembrete.publico">
+        <div *ngIf="!lembrete.publico" style="margin-top: 5%;">
             <input type="checkbox" id="{{lembrete._id.$oid}}" style="margin-top: 10%; cursor: pointer;"
                 (change)="AtualizarPrivacidade(lembrete, $event)" />
             <a [routerLink]="['/lembrete',lembrete._id.$oid]" class="checkText">Lembrete Público</a>
         </div>
 
         <div class="btn-card">
-            <button mat-button (click)="Excluir(lembrete);" style="color: red; border: 1px solid red">Excluir</button>
+            <button mat-button (click)="Excluir(lembrete);"
+                style="color: red; border: 1px solid red; margin-right: 5px;">Excluir</button>
+            <button mat-button [routerLink]="['/status', lembrete._id.$oid]"
+                style="color: #1976d2; border: 1px solid #1976d2">Gerar Status</button>
         </div>
     </div>
 </div>

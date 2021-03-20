@@ -1,0 +1,10 @@
+<img class="fab" src="../favicon.ico" [routerLink]="['/home/lembretes']" />
+
+<div class="contentOk" *ngIf="publico">
+    <span style="font-size: x-large;">Status do Lembrete: "{{titulo}}"</span><br><br><br>
+    <textarea value="{{status}}" readonly></textarea>
+</div>
+
+<div class="contentErro" *ngIf="!publico">
+    <span>{{mensagem}}</span>
+</div>

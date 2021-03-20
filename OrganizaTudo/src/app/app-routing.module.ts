@@ -13,6 +13,7 @@ import { CriarLembreteComponent } from './paginas/criar-lembrete/criar-lembrete.
 import { EditarLembreteComponent } from './paginas/editar-lembrete/editar-lembrete.component';
 import { CriarContaComponent } from './paginas/criar-conta/criar-conta.component';
 import { LembreteComponent } from './paginas/lembrete/lembrete.component';
+import { StatusComponent } from './paginas/status/status.component';
 
 const routes: Routes = [
 
@@ -23,6 +24,7 @@ const routes: Routes = [
       { path: 'login', component: LoginComponent },
       { path: 'nota/:id', component: NotaComponent },
       { path: 'lembrete/:id', component: LembreteComponent },
+      { path: 'status/:id', component: StatusComponent },
       { path: 'recuperar-senha', component: RecuperarSenhaComponent },
       { path: 'criar-conta', component: CriarContaComponent },
       {

@@ -26,6 +26,7 @@ export class LembreteComponent implements OnInit {
   nota = '';
   publico = false;
   mensagem = '';
+  id = '';
 
   ngOnInit(): void {
 
@@ -65,6 +66,7 @@ export class LembreteComponent implements OnInit {
     this.lembrete5.removeAt(0);
 
     this.route.params.subscribe(params => {
+      this.id = params['id'];
       this.api.PesquisarLembrete(params['id']).then((retorno: any) => {
         if (retorno != null && retorno !== '404') {
           this.titulo = retorno.titulo;
