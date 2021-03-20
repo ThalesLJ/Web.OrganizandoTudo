@@ -44,4 +44,13 @@ export class LembretesComponent implements OnInit {
     }
   }
 
+  AtualizarPrivacidade(lembrete: any, publico: any): void {
+    const id = lembrete._id.$oid;
+    this.api.AtualizarPrivacidadeLembrete(id, publico.currentTarget.checked).then((retorno) => {
+      if (retorno === '200') {
+        this.AtualizarListagemLembretes();
+      }
+    }).catch(() => { });
+  }
+
 }

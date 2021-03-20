@@ -75,6 +75,12 @@
     }
 }
 
+.checkText {
+    color: #1976d2;
+    font-weight: 500;
+    cursor: pointer;
+}
+
 .titulo {
     font-weight: 500;
     color: #1976d2;
@@ -103,4 +109,13 @@ input:focus {
 img:focus {
     outline: none;
     box-shadow: none;
+}
+
+a, a:visited, a:hover {
+    color: #1976d2;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #1976d2;
 }

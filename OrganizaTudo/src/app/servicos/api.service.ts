@@ -106,6 +106,18 @@ export class ApiService {
       ).toPromise();
   }
 
+  AtualizarPrivacidadeLembrete(lembreteID: string, privacidade: boolean): Promise<any> {
+    return this.http.post
+      (
+        this.base + '/atualizarPrivacidadeLembrete',
+        {
+          token: localStorage.getItem('TOKEN'),
+          privacidade,
+          lembreteID
+        }
+      ).toPromise();
+  }
+
   AtualizarPerfil(email: string, apelido: string, senha: string): Promise<any> {
     return this.http.post
       (

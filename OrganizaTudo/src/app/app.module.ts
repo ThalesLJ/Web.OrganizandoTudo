@@ -22,6 +22,7 @@ import { CriarLembreteComponent } from './paginas/criar-lembrete/criar-lembrete.
 import { EditarLembreteComponent } from './paginas/editar-lembrete/editar-lembrete.component';
 import { CriarContaComponent } from './paginas/criar-conta/criar-conta.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { LembreteComponent } from './paginas/lembrete/lembrete.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     RecuperarSenhaComponent,
     CriarLembreteComponent,
     EditarLembreteComponent,
-    CriarContaComponent
+    CriarContaComponent,
+    LembreteComponent
   ],
   entryComponents: [
     MatDialogModule,
