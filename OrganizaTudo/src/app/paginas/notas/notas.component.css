@@ -78,7 +78,7 @@
 
 .titulo {
     font-weight: 500;
-    color: #1976d2;
+    color: #35C0ED;
     cursor: pointer;
     font-size: medium;
 }
@@ -107,7 +107,7 @@
 }
 
 .checkText {
-    color: #1976d2;
+    color: #35C0ED;
     font-weight: 500;
     cursor: pointer;
 }
@@ -128,10 +128,10 @@ img:focus {
 }
 
 a, a:visited, a:hover {
-    color: #1976d2;
+    color: #35C0ED;
     text-decoration: none;
 }
 
 a:hover {
-    color: #1976d2;
+    color: #35C0ED;
 }

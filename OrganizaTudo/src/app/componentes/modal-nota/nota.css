@@ -102,7 +102,7 @@ button:focus {
     height: 25px;
     width: 2px;
     margin-left: 12px;
-    background-color: #1976d2;
+    background-color: #35C0ED;
     transform: rotate(45deg);
     Z-index: 1;
 }
@@ -110,7 +110,7 @@ button:focus {
 .md {
     height: 25px;
     width: 2px;
-    background-color: #1976d2;
+    background-color: #35C0ED;
     transform: rotate(90deg);
     Z-index: 2;
 }
