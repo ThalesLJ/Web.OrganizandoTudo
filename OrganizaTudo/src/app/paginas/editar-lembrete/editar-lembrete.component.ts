@@ -10,6 +10,7 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './editar-lembrete.component.html',
   styleUrls: ['./editar-lembrete.component.css']
 })
+
 export class EditarLembreteComponent implements OnInit {
 
   constructor(

@@ -8,6 +8,7 @@ import { SessaoService } from 'src/app/servicos/sessao.service';
   templateUrl: './nota.component.html',
   styleUrls: ['./nota.component.css']
 })
+
 export class NotaComponent implements OnInit {
 
   constructor(
@@ -23,7 +24,7 @@ export class NotaComponent implements OnInit {
     this.route.params.subscribe(params => {
 
       this.api.PesquisarNota(params['id']).then((retorno: any) => {
-        if (retorno != null && retorno !== '404') {
+        if (retorno != null && retorno !== '404' && retorno !== '500') {
           this.titulo = retorno.titulo;
           this.nota = retorno.nota;
           this.publica = true;

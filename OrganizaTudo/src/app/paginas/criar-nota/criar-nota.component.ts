@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
   templateUrl: './criar-nota.component.html',
   styleUrls: ['./criar-nota.component.css']
 })
+
 export class CriarNotaComponent implements OnInit {
 
   constructor(

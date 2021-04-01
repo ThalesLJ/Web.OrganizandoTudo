@@ -2,10 +2,6 @@
 
 <div class="form">
 
-    <div *ngIf="!publico">
-        <span>{{mensagem}}</span>
-    </div>
-
     <div *ngIf="publico">
 
         <span class="tituloLembreteReadOnly" readonly>{{titulo}}</span><br>
@@ -119,7 +115,11 @@
 
 </div>
 
-<!--Botão Salvar-->
-<div class="fab">
+<div class="contentErro" *ngIf="!publico">
+    <span>{{mensagem}}</span>
+</div>
+
+<!--Botão Gerar Status-->
+<div class="fab" *ngIf="publico">
     <button class="btnFabSalvar" [routerLink]="['/status',id]">Gerar Status</button>
 </div>

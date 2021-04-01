@@ -9,6 +9,7 @@ import { FormArray, FormBuilder } from '@angular/forms';
   templateUrl: './criar-lembrete.component.html',
   styleUrls: ['./criar-lembrete.component.css']
 })
+
 export class CriarLembreteComponent implements OnInit {
 
   constructor(

@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
   templateUrl: './notas.component.html',
   styleUrls: ['./notas.component.css']
 })
+
 export class NotasComponent implements OnInit {
 
   constructor(
@@ -75,6 +76,7 @@ export class NotasComponent implements OnInit {
   templateUrl: '../../componentes/modal-nota/nota.html',
   styleUrls: ['../../componentes/modal-nota/nota.css']
 })
+
 export class AppNotaComponent implements OnInit {
 
   constructor(
@@ -123,14 +125,13 @@ export class AppNotaComponent implements OnInit {
   excluir(): void {
 
     const id = this.data.nota._id.$oid;
-
-    this.api.DeletarNota(id).then((retorno) => {
-      const cn = confirm
-        ('Deseja excluir sua Nota mesmo?');
-      if (cn) {
+    const cn = confirm
+      ('Deseja excluir sua Nota mesmo?');
+    if (cn) {
+      this.api.DeletarNota(id).then((retorno) => {
         this.dialogRef.close();
-      }
-    }).catch(() => { });
+      }).catch(() => { });
+    }
 
   }
 

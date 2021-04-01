@@ -8,6 +8,7 @@ import { SessaoService } from 'src/app/servicos/sessao.service';
   templateUrl: './criar-conta.component.html',
   styleUrls: ['./criar-conta.component.css']
 })
+
 export class CriarContaComponent implements OnInit {
 
   apelido = '';

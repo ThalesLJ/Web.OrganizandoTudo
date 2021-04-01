@@ -9,6 +9,7 @@ import { FormArray, FormBuilder } from '@angular/forms';
   templateUrl: './status.component.html',
   styleUrls: ['./status.component.css']
 })
+
 export class StatusComponent implements OnInit {
 
   constructor(

@@ -67,7 +67,6 @@
     }
 }
 
-
 .searchNotas {
     width: 100%;
     padding: 20px 20px 10px 10px;
@@ -76,12 +75,14 @@
     border-left: none;
     border-right: none;
 }
+
 .titulo {
     font-weight: 500;
     color: #1976d2;
     cursor: pointer;
     font-size: medium;
 }
+
 .nota {
     background-color: whitesmoke;
     margin-top: 2%;
@@ -96,12 +97,15 @@
     max-height: 1000px;
     cursor: default;
 }
+
 .divButtons {
     float: right;
 }
+
 .divCheck {
     float: left;
 }
+
 .checkText {
     color: #1976d2;
     font-weight: 500;

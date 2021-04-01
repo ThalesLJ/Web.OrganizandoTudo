@@ -7,6 +7,7 @@ import { SessaoService } from 'src/app/servicos/sessao.service';
   templateUrl: './lembretes.component.html',
   styleUrls: ['./lembretes.component.css']
 })
+
 export class LembretesComponent implements OnInit {
 
   constructor(private api: ApiService, private sessao: SessaoService) { }

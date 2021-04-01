@@ -7,6 +7,7 @@ import { SessaoService } from 'src/app/servicos/sessao.service';
   templateUrl: './perfil.component.html',
   styleUrls: ['./perfil.component.css']
 })
+
 export class PerfilComponent implements OnInit {
 
   email = '';

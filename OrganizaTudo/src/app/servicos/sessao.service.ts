@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 @Injectable({
   providedIn: 'root'
 })
+
 export class SessaoService {
 
   constructor(private api: ApiService, private router: Router) { }
@@ -12,12 +13,6 @@ export class SessaoService {
   Login(TOKEN: string, APELIDO: string): void {
     localStorage.setItem('TOKEN', TOKEN);
     localStorage.setItem('APELIDO', APELIDO);
-  }
-
-  Sair(): void {
-    localStorage.removeItem('TOKEN');
-    localStorage.removeItem('APELIDO');
-    this.router.navigate(['/login']);
   }
 
   public validarToken(pagina?: string): void {
@@ -42,6 +37,12 @@ export class SessaoService {
   public getApelido(): string {
     const APELIDO = '' + localStorage.getItem('APELIDO');
     return APELIDO;
+  }
+
+  Sair(): void {
+    localStorage.removeItem('TOKEN');
+    localStorage.removeItem('APELIDO');
+    this.router.navigate(['/login']);
   }
 
 }

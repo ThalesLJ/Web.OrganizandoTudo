@@ -9,6 +9,7 @@ import { FormArray, FormBuilder } from '@angular/forms';
   templateUrl: './lembrete.component.html',
   styleUrls: ['./lembrete.component.css']
 })
+
 export class LembreteComponent implements OnInit {
 
   constructor(
@@ -68,7 +69,7 @@ export class LembreteComponent implements OnInit {
     this.route.params.subscribe(params => {
       this.id = params['id'];
       this.api.PesquisarLembrete(params['id']).then((retorno: any) => {
-        if (retorno != null && retorno !== '404') {
+        if (retorno != null && retorno !== '404' && retorno !== '500') {
           this.titulo = retorno.titulo;
           this.publico = true;
 

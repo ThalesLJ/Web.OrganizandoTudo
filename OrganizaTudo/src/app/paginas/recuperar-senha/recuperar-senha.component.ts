@@ -5,6 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './recuperar-senha.component.html',
   styleUrls: ['./recuperar-senha.component.css']
 })
+
 export class RecuperarSenhaComponent implements OnInit {
 
   constructor() { }

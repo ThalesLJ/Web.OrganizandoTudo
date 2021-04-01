@@ -287,6 +287,15 @@
     margin-top: 1%;
 }
 
+.contentErro {
+    position: fixed;
+    text-align: center;
+    top: 4%;
+    font-weight: 1000;
+    color: rgb(158, 0, 0);
+    width: 100%;
+}
+
 input:focus {
     outline: none;
     box-shadow: none;
