@@ -1,1 +1,9 @@
-<p>criar-conta works!</p>
+<form (submit)="CriarConta($event)" class="form">
+    <p class="titulo">Criação de Conta</p>
+    <input class="item" type="text" [(ngModel)]="apelido" name="apelido" required placeholder="Apelido"
+        autocomplete="off" />
+    <input class="item" type="email" [(ngModel)]="email" name="email" required placeholder="E-mail" />
+    <input class="item" type="password" [(ngModel)]="senha" name="senha" required placeholder="Senha" />
+    <input class="button" type="submit" value="Criar Conta" />
+    <p class="mensagem">{{mensagem}}</p>
+</form>

@@ -20,6 +20,16 @@ export class ApiService {
       ).toPromise();
   }
 
+  CriarConta(apelido: string, email: string, senha: string): Promise<any> {
+    return this.http.post
+      (
+        this.base + '/criarConta',
+        {
+          apelido, email, senha
+        }
+      ).toPromise();
+  }
+
   public validacaoToken(): Promise<any> {
     return this.http.post
       (
