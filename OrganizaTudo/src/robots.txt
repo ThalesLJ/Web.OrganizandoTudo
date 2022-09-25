@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Allow: /home
+Allow: /login
+
+Sitemap: https://organizandotudo.netlify.app/sitemap.xml
