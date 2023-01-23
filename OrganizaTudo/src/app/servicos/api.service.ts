@@ -9,13 +9,13 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
-  base = 'https://webhooks.mongodb-realm.com/api/client/v2.0/app/organiza-tudo-luhho/service/API/incoming_webhook';
+  base = 'https://data.mongodb-api.com/app/application-0-mqvuy/endpoint';
 
   // USUÁRIO
   CriarConta(apelido: string, email: string, senha: string): Promise<any> {
     return this.http.post
       (
-        this.base + '/criarConta',
+        this.base + '/CriarConta',
         { apelido, email, senha }
       ).toPromise();
   }
@@ -31,7 +31,7 @@ export class ApiService {
   validacaoToken(): Promise<any> {
     return this.http.post
       (
-        this.base + '/validacaoToken',
+        this.base + '/ValidarToken',
         {},
         { headers: { Authorization: 'Bearer ' + localStorage.getItem('TOKEN') } }
       ).toPromise();
@@ -40,7 +40,7 @@ export class ApiService {
   ListarPerfil(): Promise<any> {
     return this.http.post
       (
-        this.base + '/listarPerfil',
+        this.base + '/Perfil',
         {},
         { headers: { Authorization: 'Bearer ' + localStorage.getItem('TOKEN') } }
       ).toPromise();
@@ -49,7 +49,7 @@ export class ApiService {
   AtualizarPerfil(email: string, apelido: string, senha: string): Promise<any> {
     return this.http.post
       (
-        this.base + '/atualizarPerfil',
+        this.base + '/Perfil',
         { dados: { email, apelido, senha } },
         { headers: { Authorization: 'Bearer ' + localStorage.getItem('TOKEN') } }
       ).toPromise();
@@ -60,7 +60,7 @@ export class ApiService {
   CriarNota(nota: any): Promise<any> {
     return this.http.post
       (
-        this.base + '/inserirNota',
+        this.base + '/Nota',
         { nota },
         { headers: { Authorization: 'Bearer ' + localStorage.getItem('TOKEN') } }
       ).toPromise();
@@ -69,7 +69,7 @@ export class ApiService {
   PesquisarNota(id: string): Promise<any> {
     return this.http.post
       (
-        this.base + '/pesquisarNota',
+        this.base + '/Nota',
         { id },
         { headers: { Authorization: 'Bearer ' + localStorage.getItem('TOKEN') } }
       ).toPromise();
@@ -78,7 +78,7 @@ export class ApiService {
   PesquisarNotas(titulo: string): Promise<any> {
     return this.http.post
       (
-        this.base + '/pesquisarNotas',
+        this.base + '/Notas',
         { titulo },
         { headers: { Authorization: 'Bearer ' + localStorage.getItem('TOKEN') } }
       ).toPromise();
@@ -87,7 +87,7 @@ export class ApiService {
   BuscarNotas(): Promise<any> {
     return this.http.post
       (
-        this.base + '/buscarNotas',
+        this.base + '/Notas',
         {},
         { headers: { Authorization: 'Bearer ' + localStorage.getItem('TOKEN') } }
       )
@@ -97,7 +97,7 @@ export class ApiService {
   AtualizarNota(notaID: string, nota: any): Promise<any> {
     return this.http.post
       (
-        this.base + '/editarNota',
+        this.base + '/Nota',
         { notaNova: nota, notaID },
         { headers: { Authorization: 'Bearer ' + localStorage.getItem('TOKEN') } }
       ).toPromise();
@@ -106,7 +106,7 @@ export class ApiService {
   AtualizarPrivacidadeNota(notaID: string, privacidade: boolean): Promise<any> {
     return this.http.post
       (
-        this.base + '/atualizarPrivacidadeNota',
+        this.base + '/AtualizarPrivacidadeNota',
         { privacidade, notaID },
         { headers: { Authorization: 'Bearer ' + localStorage.getItem('TOKEN') } }
       ).toPromise();
@@ -115,7 +115,7 @@ export class ApiService {
   DeletarNota(notaID: string): Promise<any> {
     return this.http.post
       (
-        this.base + '/deletarNota',
+        this.base + '/Nota',
         { notaID },
         { headers: { Authorization: 'Bearer ' + localStorage.getItem('TOKEN') } }
       ).toPromise();
@@ -126,7 +126,7 @@ export class ApiService {
   CriarLembrete(dados: any): Promise<any> {
     return this.http.post
       (
-        this.base + '/inserirLembrete',
+        this.base + '/Lembrete',
         { dados },
         { headers: { Authorization: 'Bearer ' + localStorage.getItem('TOKEN') } }
       ).toPromise();
@@ -135,7 +135,7 @@ export class ApiService {
   PesquisarLembrete(id: string): Promise<any> {
     return this.http.post
       (
-        this.base + '/pesquisarLembrete',
+        this.base + '/Lembrete',
         { id },
         { headers: { Authorization: 'Bearer ' + localStorage.getItem('TOKEN') } }
       ).toPromise();
@@ -144,7 +144,7 @@ export class ApiService {
   PesquisarLembretes(titulo: string): Promise<any> {
     return this.http.post
       (
-        this.base + '/pesquisarLembretes',
+        this.base + '/Lembretes',
         { titulo },
         { headers: { Authorization: 'Bearer ' + localStorage.getItem('TOKEN') } }
       ).toPromise();
@@ -153,7 +153,7 @@ export class ApiService {
   BuscarLembretes(): Promise<any> {
     return this.http.post
       (
-        this.base + '/buscarLembretes',
+        this.base + '/Lembretes',
         {},
         { headers: { Authorization: 'Bearer ' + localStorage.getItem('TOKEN') } }
       ).toPromise();
@@ -162,7 +162,7 @@ export class ApiService {
   AtualizarLembrete(lembreteID: string, dados: any): Promise<any> {
     return this.http.post
       (
-        this.base + '/editarLembrete',
+        this.base + '/Lembrete',
         { dados, lembreteID },
         { headers: { Authorization: 'Bearer ' + localStorage.getItem('TOKEN') } }
       ).toPromise();
@@ -171,7 +171,7 @@ export class ApiService {
   AtualizarPrivacidadeLembrete(lembreteID: string, privacidade: boolean): Promise<any> {
     return this.http.post
       (
-        this.base + '/atualizarPrivacidadeLembrete',
+        this.base + '/AtualizarPrivacidadeLembrete',
         { privacidade, lembreteID },
         { headers: { Authorization: 'Bearer ' + localStorage.getItem('TOKEN') } }
       ).toPromise();
@@ -180,7 +180,7 @@ export class ApiService {
   DeletarLembrete(lembreteID: string): Promise<any> {
     return this.http.post
       (
-        this.base + '/deletarLembrete',
+        this.base + '/Lembrete',
         { lembreteID },
         { headers: { Authorization: 'Bearer ' + localStorage.getItem('TOKEN') } }
       ).toPromise();
