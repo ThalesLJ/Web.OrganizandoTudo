@@ -38,7 +38,7 @@ export class ApiService {
   }
 
   ListarPerfil(): Promise<any> {
-    return this.http.post
+    return this.http.get
       (
         this.base + '/Perfil',
         {},
@@ -47,7 +47,7 @@ export class ApiService {
   }
 
   AtualizarPerfil(email: string, apelido: string, senha: string): Promise<any> {
-    return this.http.post
+    return this.http.put
       (
         this.base + '/Perfil',
         { dados: { email, apelido, senha } },
@@ -67,7 +67,7 @@ export class ApiService {
   }
 
   PesquisarNota(id: string): Promise<any> {
-    return this.http.post
+    return this.http.get
       (
         this.base + '/Nota',
         { id },
@@ -76,7 +76,7 @@ export class ApiService {
   }
 
   PesquisarNotas(titulo: string): Promise<any> {
-    return this.http.post
+    return this.http.get
       (
         this.base + '/Notas',
         { titulo },
@@ -85,7 +85,7 @@ export class ApiService {
   }
 
   BuscarNotas(): Promise<any> {
-    return this.http.post
+    return this.http.get
       (
         this.base + '/Notas',
         {},
@@ -95,7 +95,7 @@ export class ApiService {
   }
 
   AtualizarNota(notaID: string, nota: any): Promise<any> {
-    return this.http.post
+    return this.http.put
       (
         this.base + '/Nota',
         { notaNova: nota, notaID },
@@ -104,7 +104,7 @@ export class ApiService {
   }
 
   AtualizarPrivacidadeNota(notaID: string, privacidade: boolean): Promise<any> {
-    return this.http.post
+    return this.http.put
       (
         this.base + '/AtualizarPrivacidadeNota',
         { privacidade, notaID },
@@ -113,7 +113,7 @@ export class ApiService {
   }
 
   DeletarNota(notaID: string): Promise<any> {
-    return this.http.post
+    return this.http.delete
       (
         this.base + '/Nota',
         { notaID },
@@ -133,7 +133,7 @@ export class ApiService {
   }
 
   PesquisarLembrete(id: string): Promise<any> {
-    return this.http.post
+    return this.http.get
       (
         this.base + '/Lembrete',
         { id },
@@ -142,7 +142,7 @@ export class ApiService {
   }
 
   PesquisarLembretes(titulo: string): Promise<any> {
-    return this.http.post
+    return this.http.get
       (
         this.base + '/Lembretes',
         { titulo },
@@ -151,7 +151,7 @@ export class ApiService {
   }
 
   BuscarLembretes(): Promise<any> {
-    return this.http.post
+    return this.http.get
       (
         this.base + '/Lembretes',
         {},
@@ -160,7 +160,7 @@ export class ApiService {
   }
 
   AtualizarLembrete(lembreteID: string, dados: any): Promise<any> {
-    return this.http.post
+    return this.http.put
       (
         this.base + '/Lembrete',
         { dados, lembreteID },
@@ -169,7 +169,7 @@ export class ApiService {
   }
 
   AtualizarPrivacidadeLembrete(lembreteID: string, privacidade: boolean): Promise<any> {
-    return this.http.post
+    return this.http.put
       (
         this.base + '/AtualizarPrivacidadeLembrete',
         { privacidade, lembreteID },
@@ -178,7 +178,7 @@ export class ApiService {
   }
 
   DeletarLembrete(lembreteID: string): Promise<any> {
-    return this.http.post
+    return this.http.delete
       (
         this.base + '/Lembrete',
         { lembreteID },
